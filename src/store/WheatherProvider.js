@@ -1,15 +1,15 @@
-import { useReducer } from 'react'
-import { ThemeContext } from './context';
+import { useReducer } from "react";
+import { ThemeContext } from "./context";
 
 const initialState = {
   darkMode: true,
-  userInput: '',
-  observationTime: '',
+  userInput: "",
+  observationTime: "",
   temperature: 0,
-  description: '',
+  description: "",
   location: 0,
-  country: '',
-  allData: ''
+  country: "",
+  allData: "",
 };
 
 const themeReducer = (state, action) => {
@@ -23,7 +23,8 @@ const themeReducer = (state, action) => {
     case "GETDATA":
       console.log(action.payload);
       return {
-        ...state, allData: action.payload,
+        ...state,
+        allData: action.payload,
       };
     default:
       return state;
@@ -33,14 +34,16 @@ const themeReducer = (state, action) => {
 export function ThemeProvider(props) {
   const [state, dispatch] = useReducer(themeReducer, initialState);
   const changheDark = () => {
-    state.darkMode ? dispatch({ type: "LIGHTMODE" }) : dispatch({ type: "DARKMODE" })
-  }
+    state.darkMode
+      ? dispatch({ type: "LIGHTMODE" })
+      : dispatch({ type: "DARKMODE" });
+  };
   const getUserInput = (e) => {
-    dispatch({ type: "USERINPUT", payload: e.target.value })
-  }
+    dispatch({ type: "USERINPUT", payload: e.target.value });
+  };
   const setData = (allData) => {
-    dispatch({ type: "GETDATA", payload: allData })
-  }
+    dispatch({ type: "GETDATA", payload: allData });
+  };
   const value = {
     darkMode: state.darkMode,
     userInput: state.userInput,
@@ -53,6 +56,10 @@ export function ThemeProvider(props) {
     observationTime: state.observationTime,
     allData: state.allData,
     setData: setData,
-  }
-  return <ThemeContext.Provider value={value}>{props.children}</ThemeContext.Provider>;
+  };
+  return (
+    <ThemeContext.Provider value={value}>
+      {props.children}
+    </ThemeContext.Provider>
+  );
 }

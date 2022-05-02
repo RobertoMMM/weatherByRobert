@@ -4,7 +4,7 @@
 }
 .darkBtn,
 .lightBtn {
-  @apply text-3xl;
+  @apply text-2xl;
 }
 .darkBtn {
   @apply animate-spinSun;
@@ -14,13 +14,16 @@
 }
 .divThemeAc,
 .divThemeIn {
-  @apply h-12 w-12 justify-center 
+  @apply h-10 w-10 justify-center 
   text-center flex rounded-xl text-[#66FCF1] border-[#66FCF1] 
   border-[3px] cursor-pointer;
 }
 .divThemeAc {
   @apply animate-toggleAnimation;
 }
-.labelInput {
-  @apply bg-black w-80 h-12 rounded-xl items-center flex gap-2;
+.labelInputDark {
+  @apply bg-black w-72 h-10 rounded-xl items-center flex gap-2;
+}
+.labelInputWhite {
+  @apply bg-white w-72 h-10 rounded-xl items-center flex gap-2;
 }

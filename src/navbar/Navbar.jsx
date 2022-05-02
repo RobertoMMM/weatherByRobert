@@ -1,12 +1,13 @@
 import { useContext, useState } from "react";
 import { MdOutlineLightMode, MdOutlineNightlight } from "react-icons/md";
 import { FiSearch } from "react-icons/fi";
-import "./Navbar.css";
 import { ThemeContext } from "../store/context";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [btnEffect, setBtnEffect] = useState(true);
-  const { darkMode, changheDark, getUserInput, userInput } = useContext(ThemeContext);
+  const { darkMode, changheDark, getUserInput, userInput } =
+    useContext(ThemeContext);
 
   const themeToggler = () => {
     changheDark();
@@ -14,14 +15,16 @@ const Navbar = () => {
   };
   return (
     <div className="navbarSearch">
-      <label className="labelInput">
-        <FiSearch className="text-2xl ml-4" />
+      <label className="labelInputDark">
+        <FiSearch className="text-2xl ml-4 text-[#66FCF1]" />
         <input
           value={userInput}
           onChange={(e) => getUserInput(e)}
           type="text"
           className={
-            "text-white border-b-2 border-[#66FCF1] bg-black b w-[80%] h-[70%] outline-0 "
+            darkMode
+              ? "text-white border-b-2 border-[#66FCF1] bg-black b w-[80%] h-[70%] outline-0 "
+              : "text-white border-b-2 border-[#66FCF1] bg-white b w-[80%] h-[70%] outline-0"
           }
         />
       </label>
