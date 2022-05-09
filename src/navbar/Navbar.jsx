@@ -16,7 +16,7 @@ const Navbar = () => {
   return (
     <div className="navbarSearch">
       <label className="labelInputDark">
-        <FiSearch className="text-2xl ml-4 text-[#66FCF1]" />
+        <FiSearch className="text-2xl ml-4 text-[#000000]" />
         <input
           value={userInput}
           onChange={(e) => getUserInput(e)}
