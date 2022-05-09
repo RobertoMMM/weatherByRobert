@@ -21,7 +21,6 @@ const themeReducer = (state, action) => {
     case "USERINPUT":
       return { ...state, userInput: action.payload };
     case "GETDATA":
-      console.log(action.payload);
       return {
         ...state,
         allData: action.payload,

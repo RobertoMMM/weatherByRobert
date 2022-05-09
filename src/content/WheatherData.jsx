@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../store/context";
 
 const WheatherData = () => {
-  const { allData } = useContext(ThemeContext);
+  const { allData, userInput } = useContext(ThemeContext);
   return (
     <p
       style={{
@@ -12,7 +12,7 @@ const WheatherData = () => {
         top: "50px",
       }}
     >
-      {allData.current.temperature}
+      {userInput && allData.current.temperature}
     </p>
   );
 };

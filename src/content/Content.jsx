@@ -6,6 +6,7 @@ import WheatherData from "./WheatherData";
 
 const Content = () => {
   const [writing, setWriting] = useState(true);
+  const [isErrorCode, setIsErrorCode] = useState(false)
   const { userInput, setData, allData } = useContext(ThemeContext);
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -17,6 +18,19 @@ const Content = () => {
       setWriting(true);
     };
   }, [userInput]);
+  const DiplayedInfo = () => {
+    if(isErrorCode){
+      return (
+        <><p className="text-3xl text-red absolute top-16">NO Nothing</p></>
+      )
+    }else{
+      return (
+        <>
+          {writing ? <Wait /> : allData && <WheatherData />}
+        </>
+      )
+    }
+  }
   const getData = async () => {
     if (userInput.length > 0) {
       const response = await fetch(
@@ -24,13 +38,15 @@ const Content = () => {
       );
       const data = await response.json();
       if (data.error) {
+        setIsErrorCode(true)
         return;
       } else {
+        setIsErrorCode(false)
         setData(data);
       }
     }
   };
-  return <>{writing ? <Wait /> : allData && <WheatherData />}</>;
+  return <><DiplayedInfo /></>;
 };
 
 export default Content;

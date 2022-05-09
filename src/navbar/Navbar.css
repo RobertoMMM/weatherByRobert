@@ -1,13 +1,13 @@
 .navbarSearch {
-  @apply bg-slate-600 fixed top-0 left-0 
-  w-[100vw] h-[7vh] justify-center flex items-center gap-96;
+  @apply fixed top-[12vh] left-[50%] translate-x-[-50%]
+  w-[80vw] h-[7vh] justify-center flex items-center gap-96 rounded-xl;
 }
 .darkBtn,
 .lightBtn {
   @apply text-2xl;
 }
 .darkBtn {
-  @apply animate-spinSun;
+  @apply animate-spinSun ;
 }
 .lightBtn {
   @apply animate-moonPulse;
@@ -22,8 +22,8 @@
   @apply animate-toggleAnimation;
 }
 .labelInputDark {
-  @apply bg-black w-72 h-10 rounded-xl items-center flex gap-2;
+  @apply w-72 h-10 rounded-xl items-center flex gap-2;
 }
 .labelInputWhite {
-  @apply bg-white w-72 h-10 rounded-xl items-center flex gap-2;
+  @apply w-72 h-10 rounded-xl items-center flex gap-2;
 }

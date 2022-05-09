@@ -16,15 +16,15 @@ const Navbar = () => {
   return (
     <div className="navbarSearch">
       <label className="labelInputDark">
-        <FiSearch className="text-2xl ml-4 text-[#000000]" />
+        <FiSearch className={darkMode ? "text-2xl ml-4 text-[#66FCF1]" : "text-2xl ml-4 text-[#45A29E]"} />
         <input
           value={userInput}
           onChange={(e) => getUserInput(e)}
           type="text"
           className={
             darkMode
-              ? "text-white border-b-2 border-[#66FCF1] bg-black b w-[80%] h-[70%] outline-0 "
-              : "text-white border-b-2 border-[#66FCF1] bg-white b w-[80%] h-[70%] outline-0"
+              ? "text-45A29E border-b-2 border-[#66FCF1] bg-transparent w-[80%] h-[70%] outline-0 "
+              : "text-white border-b-2 border-[#45A29E] bg-transparent w-[80%] h-[70%] outline-0"
           }
         />
       </label>
