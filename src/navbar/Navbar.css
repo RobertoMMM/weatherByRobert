@@ -7,7 +7,7 @@
   @apply text-2xl;
 }
 .darkBtn {
-  @apply animate-spinSun ;
+  @apply animate-spinSun;
 }
 .lightBtn {
   @apply animate-moonPulse;
@@ -26,4 +26,16 @@
 }
 .labelInputWhite {
   @apply w-72 h-10 rounded-xl items-center flex gap-2;
+}
+.userInputDark {
+  @apply text-white border-b-2 border-[#66FCF1] bg-transparent w-[80%] h-[70%] outline-0;
+}
+.userInputLigth {
+  @apply text-[#45A29E] border-b-2 border-[#45A29E] bg-transparent w-[80%] h-[70%] outline-0;
+}
+.searchIconDark {
+  @apply text-2xl ml-4 text-[#66FCF1]
+}
+.searchIconLigth {
+  @apply text-2xl ml-4 text-[#45A29E]
 }

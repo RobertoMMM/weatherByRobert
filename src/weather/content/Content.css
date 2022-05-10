@@ -1,0 +1,6 @@
+.notFound {
+  @apply text-3xl absolute top-16;
+}
+.sectionInfo {
+  @apply justify-center flex relative top-1/3;
+}

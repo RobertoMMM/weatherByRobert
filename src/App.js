@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ThemeContext } from "./store/context";
 import "./App.css";
 import Navbar from "./navbar/Navbar";
-import Content from "./content/Content";
+import Content from "./weather/content/Content";
 
 const App = () => {
   const { darkMode } = useContext(ThemeContext);
