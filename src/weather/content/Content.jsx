@@ -40,7 +40,7 @@ const Content = () => {
       );
       // const response2 = await fetch(
       //   `http://api.weatherapi.com/v1/forecast.json?key=030082f3dc234b4181f111631221005&q=${userInput}&days=3`
-        
+
       // );
       const data = await response.json();
       // const data2 = await response2.json();

@@ -38,7 +38,11 @@ const WeatherData = () => {
 
   return (
     <>
-      <section className={darkMode ? 'weatherDataSectionDark' : 'weatherDataSectionLight'}>
+      <section
+        className={
+          darkMode ? "weatherDataSectionDark" : "weatherDataSectionLight"
+        }
+      >
         <div className="localUserData">
           <div className="localDay">{dayName}</div>
           <div className="localDate">
