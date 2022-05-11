@@ -5,7 +5,7 @@
   @apply justify-center flex relative top-1/3;
 }
 .noUserInput {
-  @apply text-xl top-1/3 m-2 text-center items-center ;
+  @apply text-xl top-1/3 m-2 text-center items-center;
 }
 .keyboard {
   @apply text-7xl m-auto mt-5 animate-bounce;
