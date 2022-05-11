@@ -4,11 +4,6 @@ import { ThemeContext } from "./context";
 const initialState = {
   darkMode: true,
   userInput: "",
-  observationTime: "",
-  temperature: 0,
-  description: "",
-  location: 0,
-  country: "",
   allData: "",
 };
 
@@ -48,11 +43,6 @@ export function ThemeProvider(props) {
     userInput: state.userInput,
     changheDark: changheDark,
     getUserInput: getUserInput,
-    description: state.description,
-    country: state.country,
-    location: state.location,
-    temperature: state.temperature,
-    observationTime: state.observationTime,
     allData: state.allData,
     setData: setData,
   };

@@ -45,7 +45,7 @@ const Content = () => {
       const data = await response.json();
       // const data2 = await response2.json();
       // console.log(data);
-      // console.log(data2);
+      // console.log(data2.forecast.forecastday[0]);
       if (data.error) {
         setIsErrorCode(true);
         return;

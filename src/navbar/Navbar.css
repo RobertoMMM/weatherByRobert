@@ -1,6 +1,6 @@
 .navbarSearch {
-  @apply fixed top-[12vh] left-[50%] translate-x-[-50%]
-  min-w-[10rem] h-16 justify-center flex items-center gap-96 rounded-xl;
+  @apply fixed w-full top-5 h-16 flex items-center justify-evenly md:gap-96 rounded-xl
+  md:min-w-[10rem] md:top-[12vh] md:left-[50%] md:translate-x-[-50%] md:justify-center;
 }
 .darkBtn,
 .lightBtn {
@@ -24,14 +24,15 @@
 .labelInputDark {
   @apply w-72 h-10 rounded-xl items-center flex gap-2;
 }
-.labelInputWhite {
-  @apply w-72 h-10 rounded-xl items-center flex gap-2;
+.userInputDark,
+.userInputLigth {
+  @apply border-b-2 bg-transparent w-48 h-[70%] outline-0;
 }
 .userInputDark {
-  @apply text-slate-200 border-b-2 border-[#66FCF1] bg-transparent w-[80%] h-[70%] outline-0;
+  @apply text-slate-200 border-[#66FCF1];
 }
 .userInputLigth {
-  @apply text-slate-800 border-b-2 border-[#45A29E] bg-transparent w-[80%] h-[70%] outline-0;
+  @apply text-slate-800 border-[#45A29E];
 }
 .searchIconDark {
   @apply text-2xl ml-4;
