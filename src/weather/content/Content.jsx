@@ -37,7 +37,7 @@ const Content = () => {
   const NoUserInput = () => {
     return (
       <div className="noUserInput">
-        <p>Type something</p>
+        <p>Check current weather around the world</p>
         <BsKeyboard className="keyboard" />
       </div>
     );
