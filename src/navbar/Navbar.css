@@ -21,7 +21,7 @@
 .divThemeAc {
   @apply animate-toggleAnimation;
 }
-.labelInputDark {
+.labelInput {
   @apply w-72 h-10 rounded-xl items-center flex gap-2;
 }
 .userInputDark,
@@ -29,14 +29,11 @@
   @apply border-b-2 bg-transparent w-48 h-[70%] outline-0;
 }
 .userInputDark {
-  @apply text-slate-200 border-[#66FCF1];
+  @apply text-slate-200 border-forDark;
 }
 .userInputLigth {
-  @apply text-slate-800 border-[#45A29E];
+  @apply text-slate-800 border-forWhite;
 }
-.searchIconDark {
-  @apply text-2xl ml-4;
-}
-.searchIconLigth {
+.searchIcon {
   @apply text-2xl ml-4;
 }

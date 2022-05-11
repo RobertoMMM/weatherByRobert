@@ -38,10 +38,10 @@ const Content = () => {
     return (
       <div className="noUserInput">
         <p>Type something</p>
-        <BsKeyboard className="keyboard"/>
+        <BsKeyboard className="keyboard" />
       </div>
-    )
-  }
+    );
+  };
   const getData = async () => {
     if (userInput.length > 0) {
       const response = await fetch(

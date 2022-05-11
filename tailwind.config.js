@@ -3,6 +3,12 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      colors: {
+        forDark: "#66FCF1",
+        forWhite: "#45A29E",
+        darkThemeBack: "#0D1117",
+        whiteThemeBack: "#e6e6e6",
+      },
       keyframes: {
         toggleAnimation: {
           "0%": {

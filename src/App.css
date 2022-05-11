@@ -3,8 +3,8 @@
   @apply top-0 left-0 absolute w-[100vw] h-[100vh] duration-300;
 }
 .darkSec {
-  @apply bg-[#0D1117] text-[#66FCF1];
+  @apply bg-darkThemeBack text-forDark;
 }
 .lightSec {
-  @apply bg-[#e6e6e6] text-[#45A29E];
+  @apply bg-whiteThemeBack text-forWhite;
 }

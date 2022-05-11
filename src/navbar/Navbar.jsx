@@ -15,8 +15,8 @@ const Navbar = () => {
   };
   return (
     <div className="navbarSearch">
-      <label className="labelInputDark">
-        <FiSearch className={darkMode ? "searchIconDark" : "searchIconLigth"} />
+      <label className="labelInput">
+        <FiSearch className="searchIcon" />
         <input
           value={userInput}
           onChange={(e) => getUserInput(e)}
