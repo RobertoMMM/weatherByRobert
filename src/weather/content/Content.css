@@ -4,3 +4,9 @@
 .sectionInfo {
   @apply justify-center flex relative top-1/3;
 }
+.noUserInput {
+  @apply text-3xl relative top-1/3 flex-col;
+}
+.keyboard {
+  @apply text-7xl absolute left-1/3 mt-5 animate-bounce
+}

@@ -1,6 +1,7 @@
 import { useContext, useState, useEffect } from "react";
 import { ThemeContext } from "../../store/context";
 import { HiOutlineEmojiSad } from "react-icons/hi";
+import { BsKeyboard } from "react-icons/bs";
 import WeatherData from "../data/WeatherData";
 import Wait from "../waitpage/Wait";
 import "./Content.css";
@@ -33,6 +34,14 @@ const Content = () => {
       return <>{writing ? <Wait /> : allData && <WeatherData />}</>;
     }
   };
+  const NoUserInput = () => {
+    return (
+      <div className="noUserInput">
+        <p>Type something</p>
+        <BsKeyboard className="keyboard"/>
+      </div>
+    )
+  }
   const getData = async () => {
     if (userInput.length > 0) {
       const response = await fetch(
@@ -57,7 +66,10 @@ const Content = () => {
   };
   return (
     <>
-      <section className="sectionInfo">{userInput && <DiplayedInfo />}</section>
+      <section className="sectionInfo">
+        {!userInput && <NoUserInput />}
+        {userInput && <DiplayedInfo />}
+      </section>
     </>
   );
 };
