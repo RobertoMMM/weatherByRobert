@@ -1,0 +1,27 @@
+.weatherDataSectionDark {
+  @apply h-80 w-96 rounded-2xl border-2 border-[#66FCF1] text-slate-300;
+}
+.weatherDataSectionLight {
+  @apply h-80 w-96 rounded-2xl border-2 border-[#45A29E] text-slate-700;
+}
+.localUserData {
+  @apply ml-10 mt-10;
+}
+.localDay {
+  @apply text-xl font-semibold;
+}
+.localDate {
+  @apply flex justify-evenly w-1/4 text-slate-400 text-sm mt-1;
+}
+.location {
+  @apply flex justify-evenly w-1/5 text-slate-400 text-sm mt-1;
+}
+.localWeatherData {
+  @apply text-5xl flex justify-end items-end h-1/3  mr-10;
+}
+.localTemp {
+  @apply flex;
+}
+.localCondition {
+  @apply text-2xl absolute translate-y-10;
+}

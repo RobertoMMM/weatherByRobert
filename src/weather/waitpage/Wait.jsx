@@ -1,9 +1,10 @@
 import { TiWeatherCloudy } from "react-icons/ti";
+import "./waitpage.css";
 
 const Wait = () => {
   return (
     <>
-      <TiWeatherCloudy className="text-[5rem] absolute text-[#66FCF1] top-16 animate-ping" />
+      <TiWeatherCloudy className="waitIcon" />
     </>
   );
 };

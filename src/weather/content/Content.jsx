@@ -1,10 +1,9 @@
-import { useContext, useState } from "react";
-import "./Content.css";
-import { useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { ThemeContext } from "../../store/context";
+import { HiOutlineEmojiSad } from "react-icons/hi";
 import WeatherData from "../data/WeatherData";
 import Wait from "../waitpage/Wait";
-import { HiOutlineEmojiSad } from "react-icons/hi";
+import "./Content.css";
 
 const Content = () => {
   const [writing, setWriting] = useState(true);
@@ -24,8 +23,8 @@ const Content = () => {
     if (isErrorCode) {
       return (
         <>
-            <p className="notFound">
-            <HiOutlineEmojiSad className="float-left flex mr-4"/>
+          <p className="notFound">
+            <HiOutlineEmojiSad className="float-left flex mr-4" />
             No results
           </p>
         </>
@@ -39,8 +38,14 @@ const Content = () => {
       const response = await fetch(
         `http://api.weatherapi.com/v1/current.json?key=030082f3dc234b4181f111631221005&q=${userInput}`
       );
+      // const response2 = await fetch(
+      //   `http://api.weatherapi.com/v1/forecast.json?key=030082f3dc234b4181f111631221005&q=${userInput}&days=3`
+        
+      // );
       const data = await response.json();
-      console.log(data);
+      // const data2 = await response2.json();
+      // console.log(data);
+      // console.log(data2);
       if (data.error) {
         setIsErrorCode(true);
         return;
@@ -52,9 +57,7 @@ const Content = () => {
   };
   return (
     <>
-      <section className="sectionInfo">
-        {userInput && <DiplayedInfo />}
-      </section>
+      <section className="sectionInfo">{userInput && <DiplayedInfo />}</section>
     </>
   );
 };

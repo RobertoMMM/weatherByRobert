@@ -1,6 +1,6 @@
 .navbarSearch {
   @apply fixed top-[12vh] left-[50%] translate-x-[-50%]
-  w-[80vw] h-[7vh] justify-center flex items-center gap-96 rounded-xl;
+  min-w-[10rem] h-16 justify-center flex items-center gap-96 rounded-xl;
 }
 .darkBtn,
 .lightBtn {
@@ -14,8 +14,8 @@
 }
 .divThemeAc,
 .divThemeIn {
-  @apply h-10 w-10 justify-center 
-  text-center flex rounded-xl text-[#66FCF1] border-[#66FCF1] 
+  @apply h-10 min-w-[2.5rem] justify-center 
+  text-center flex rounded-xl
   border-[3px] cursor-pointer;
 }
 .divThemeAc {
@@ -28,14 +28,14 @@
   @apply w-72 h-10 rounded-xl items-center flex gap-2;
 }
 .userInputDark {
-  @apply text-white border-b-2 border-[#66FCF1] bg-transparent w-[80%] h-[70%] outline-0;
+  @apply text-slate-200 border-b-2 border-[#66FCF1] bg-transparent w-[80%] h-[70%] outline-0;
 }
 .userInputLigth {
-  @apply text-[#45A29E] border-b-2 border-[#45A29E] bg-transparent w-[80%] h-[70%] outline-0;
+  @apply text-slate-800 border-b-2 border-[#45A29E] bg-transparent w-[80%] h-[70%] outline-0;
 }
 .searchIconDark {
-  @apply text-2xl ml-4 text-[#66FCF1]
+  @apply text-2xl ml-4;
 }
 .searchIconLigth {
-  @apply text-2xl ml-4 text-[#45A29E]
+  @apply text-2xl ml-4;
 }

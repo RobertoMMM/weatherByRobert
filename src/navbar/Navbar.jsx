@@ -16,24 +16,20 @@ const Navbar = () => {
   return (
     <div className="navbarSearch">
       <label className="labelInputDark">
-        <FiSearch
-          className={
-            darkMode
-              ? "searchIconDark"
-              : "searchIconLigth"
-          }
-        />
+        <FiSearch className={darkMode ? "searchIconDark" : "searchIconLigth"} />
         <input
           value={userInput}
           onChange={(e) => getUserInput(e)}
           type="text"
           className={darkMode ? "userInputDark" : "userInputLigth"}
+          placeholder="Check out current weather"
         />
       </label>
       <div
         className={`${btnEffect && "divThemeAc"} divThemeIn`}
         onClick={themeToggler}
         onAnimationEnd={() => setBtnEffect(false)}
+        style={{ borderColor: `${!darkMode ? "#45A29E" : "#66FCF1"}` }}
       >
         <button className={darkMode ? "darkBtn" : "lightBtn"}>
           {darkMode ? <MdOutlineLightMode /> : <MdOutlineNightlight />}
