@@ -47,14 +47,14 @@ const Content = () => {
       const response = await fetch(
         `http://api.weatherapi.com/v1/current.json?key=030082f3dc234b4181f111631221005&q=${userInput}`
       );
-      // const response2 = await fetch(
-      //   `http://api.weatherapi.com/v1/forecast.json?key=030082f3dc234b4181f111631221005&q=${userInput}&days=3`
+      const response2 = await fetch(
+        `http://api.weatherapi.com/v1/forecast.json?key=030082f3dc234b4181f111631221005&q=${userInput}&days=3`
 
-      // );
+      );
       const data = await response.json();
-      // const data2 = await response2.json();
-      // console.log(data);
-      // console.log(data2.forecast.forecastday[0]);
+      const data2 = await response2.json();
+      console.log(data);
+      console.log(data2.forecast.forecastday[0]);
       if (data.error) {
         setIsErrorCode(true);
         return;
@@ -75,4 +75,3 @@ const Content = () => {
 };
 
 export default Content;
-// come
