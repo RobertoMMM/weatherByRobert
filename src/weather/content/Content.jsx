@@ -9,7 +9,7 @@ import "./Content.css";
 const Content = () => {
   const [writing, setWriting] = useState(true);
   const [isErrorCode, setIsErrorCode] = useState(false);
-  const { userInput, setData, allData } = useContext(ThemeContext);
+  const { userInput, setData, allData, darkMode } = useContext(ThemeContext);
   useEffect(() => {
     const timeout = setTimeout(() => {
       getData();
@@ -25,8 +25,8 @@ const Content = () => {
       return (
         <>
           <p className="notFound">
-            <HiOutlineEmojiSad className="float-left flex mr-4" />
-            No results
+            <HiOutlineEmojiSad className="float-left text-5xl flex mr-4 text-forDark animate-pulse" />
+            Try another location
           </p>
         </>
       );
@@ -37,36 +37,30 @@ const Content = () => {
   const NoUserInput = () => {
     return (
       <div className="noUserInput">
-        <p>Check current weather around the world</p>
-        <BsKeyboard className="keyboard" />
+        <p>Check weather around the world</p>
+        <BsKeyboard className={darkMode ? "keyboardDark" : "keyboardWhite"} />
       </div>
     );
   };
   const getData = async () => {
     if (userInput.length > 0) {
-      const response = await fetch(
-        `http://api.weatherapi.com/v1/current.json?key=030082f3dc234b4181f111631221005&q=${userInput}`
-      );
       const response2 = await fetch(
         `http://api.weatherapi.com/v1/forecast.json?key=030082f3dc234b4181f111631221005&q=${userInput}&days=3`
-
       );
-      const data = await response.json();
       const data2 = await response2.json();
-      console.log(data);
-      console.log(data2.forecast.forecastday[0]);
-      if (data.error) {
+      console.log(data2);
+      if (data2.error) {
         setIsErrorCode(true);
         return;
       } else {
         setIsErrorCode(false);
-        setData(data);
+        setData(data2);
       }
     }
   };
   return (
     <>
-      <section className="sectionInfo">
+      <section className={darkMode ? "sectionInfoDark" : "sectionInfoWhite"}>
         {!userInput && <NoUserInput />}
         {userInput && <DiplayedInfo />}
       </section>

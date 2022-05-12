@@ -3,23 +3,26 @@
   md:min-w-[10rem] md:top-[12vh] md:left-[50%] md:translate-x-[-50%] md:justify-center;
 }
 .darkBtn,
-.lightBtn {
-  @apply text-2xl;
+.ligthBtn {
+  @apply text-2xl text-textForDark;
 }
 .darkBtn {
   @apply animate-spinSun;
 }
-.lightBtn {
+.ligthBtn {
   @apply animate-moonPulse;
 }
-.divThemeAc,
-.divThemeIn {
+.divButtonDark,
+.divButtonLigth {
   @apply h-10 min-w-[2.5rem] justify-center 
   text-center flex rounded-xl
-  border-[3px] cursor-pointer;
+  border-[3px] cursor-pointer border-none;
 }
-.divThemeAc {
-  @apply animate-toggleAnimation;
+.divButtonDark {
+  @apply bg-forDark animate-toggleAnimation
+}
+.divButtonLigth {
+  @apply bg-forWhite animate-toggleAnimation
 }
 .labelInput {
   @apply w-72 h-10 rounded-xl items-center flex gap-2;
@@ -29,10 +32,10 @@
   @apply border-b-2 bg-transparent w-48 h-[70%] outline-0;
 }
 .userInputDark {
-  @apply text-slate-200 border-forDark;
+  @apply text-textForDark border-forDark;
 }
 .userInputLigth {
-  @apply text-slate-800 border-forWhite;
+  @apply text-textForWhite border-forWhite;
 }
 .searchIcon {
   @apply text-2xl ml-4;

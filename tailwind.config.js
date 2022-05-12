@@ -4,10 +4,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        forDark: "#66FCF1",
-        forWhite: "#45A29E",
-        darkThemeBack: "#0D1117",
-        whiteThemeBack: "#e6e6e6",
+        forDark: "#7f5af0",
+        forWhite: "#2cb67d",
+        darkThemeBack: "#0f0e17",
+        whiteThemeBack: "#fffffe",
+        textForDark: '#fffffe',
+        textForWhite: '#242629',
       },
       keyframes: {
         toggleAnimation: {
@@ -37,6 +39,9 @@ module.exports = {
         spinSun: "spinSun 500ms ease-in-out",
         moonPulse: "moonPulse 500ms ease-in-out",
         toggleAnimation: "toggleAnimation 500ms ease-in-out",
+      },
+      fontFamily: {
+        sofia: ['Sofia Pro', 'sans-serif'],
       },
     },
   },

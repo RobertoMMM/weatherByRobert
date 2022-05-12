@@ -6,7 +6,7 @@ import "./weatherData.css";
 
 const WeatherData = () => {
   const { allData, darkMode } = useContext(ThemeContext);
-  let localDate = new Date(allData.location.localtime);
+  let localDate = new Date(allData.location.localtime); 
   let localDay = localDate.getDate();
   let localYear = localDate.getFullYear();
 

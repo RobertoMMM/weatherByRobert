@@ -1,3 +1,6 @@
+.body{
+  @apply font-sofia
+}
 .darkSec,
 .lightSec {
   @apply top-0 left-0 absolute w-[100vw] h-[100vh] duration-300;

@@ -1,38 +1,35 @@
 import { useContext, useState } from "react";
-import { MdOutlineLightMode, MdOutlineNightlight } from "react-icons/md";
-import { FiSearch } from "react-icons/fi";
+import { BiMoon } from "react-icons/bi";
+import { ImSun } from "react-icons/im";
+import { FaSearch } from "react-icons/fa";
 import { ThemeContext } from "../store/context";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const [btnEffect, setBtnEffect] = useState(true);
   const { darkMode, changheDark, getUserInput, userInput } =
     useContext(ThemeContext);
 
   const themeToggler = () => {
     changheDark();
-    setBtnEffect(true);
   };
   return (
     <div className="navbarSearch">
       <label className="labelInput">
-        <FiSearch className="searchIcon" />
+        <FaSearch className="searchIcon" />
         <input
           value={userInput}
           onChange={(e) => getUserInput(e)}
           type="text"
           className={darkMode ? "userInputDark" : "userInputLigth"}
-          placeholder="Check out current weather"
+          placeholder="Let's find a weather :)"
         />
       </label>
       <div
-        className={`${btnEffect && "divThemeAc"} divThemeIn`}
+        className={`${darkMode ? "divButtonDark" : "divButtonLigth"}`}
         onClick={themeToggler}
-        onAnimationEnd={() => setBtnEffect(false)}
-        style={{ borderColor: `${!darkMode ? "#45A29E" : "#66FCF1"}` }}
       >
-        <button className={darkMode ? "darkBtn" : "lightBtn"}>
-          {darkMode ? <MdOutlineLightMode /> : <MdOutlineNightlight />}
+        <button className={darkMode ? "darkBtn" : "ligthBtn"}>
+          {darkMode ? <ImSun /> : <BiMoon />}
         </button>
       </div>
     </div>
