@@ -1,13 +1,11 @@
-import { useContext, useState } from "react";
 import { BiMoon } from "react-icons/bi";
 import { ImSun } from "react-icons/im";
 import { FaSearch } from "react-icons/fa";
-import { ThemeContext } from "../store/context";
 import "./Navbar.css";
+import useStoreData from "../hooks/use-store";
 
 const Navbar = () => {
-  const { darkMode, changheDark, getUserInput, userInput } =
-    useContext(ThemeContext);
+  const { darkMode, changheDark, getUserInput, userInput } = useStoreData();
 
   const themeToggler = () => {
     changheDark();

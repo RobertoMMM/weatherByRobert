@@ -1,9 +1,10 @@
-.emojiSadDark, .emojiSadWhite {
-    @apply float-left text-5xl flex mr-4 animate-pulse
+.emojiSadDark,
+.emojiSadWhite {
+  @apply float-left text-5xl flex mr-4 animate-pulse;
 }
 .emojiSadDark {
-    @apply text-forDark
+  @apply text-forDark;
 }
 .emojiSadWhite {
-    @apply text-forWhite   
+  @apply text-forWhite;
 }

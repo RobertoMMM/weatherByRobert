@@ -19,10 +19,10 @@
   border-[3px] cursor-pointer border-none;
 }
 .divButtonDark {
-  @apply bg-forDark animate-toggleAnimation
+  @apply bg-forDark animate-toggleAnimation;
 }
 .divButtonLigth {
-  @apply bg-forWhite animate-toggleAnimation
+  @apply bg-forWhite animate-toggleAnimation;
 }
 .labelInput {
   @apply w-72 h-10 rounded-xl items-center flex gap-2;

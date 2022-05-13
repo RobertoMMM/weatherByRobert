@@ -1,11 +1,12 @@
-import { useContext, useEffect } from "react";
-import { ThemeContext } from "../../store/context";
+import { useEffect } from "react";
 import { BsKeyboard } from "react-icons/bs";
 import "./Content.css";
 import DisplayedInfo from "../allData/displayed/DisplayedInfo";
-
+import useStoreData from "../../hooks/use-store";
 const Content = () => {
-  const { userInput, setData, darkMode, setIsError, setIsWriting } = useContext(ThemeContext);
+  const { userInput, setData, darkMode, setIsError, setIsWriting } =
+    useStoreData();
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       getData();
@@ -14,11 +15,33 @@ const Content = () => {
     return () => {
       clearTimeout(timeout);
       setIsWriting(true);
-      setIsError(false)
+      setIsError(false);
     };
   }, [userInput]);
+
+  const getData = async () => {
+    try {
+      if (userInput.length > 0) {
+        const response2 = await fetch(
+          `http://api.weatherapi.com/v1/forecast.json?key=030082f3dc234b4181f111631221005&q=${userInput}&days=3`
+        );
+        const data2 = await response2.json();
+        console.log(data2);
+        if (data2.error) {
+          setIsError(true);
+          return;
+        } else {
+          setIsError(false);
+          setData(data2);
+        }
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const NoUserInput = () => {
-    if(userInput.length <= 0){
+    if (userInput.length <= 0) {
     }
     return (
       <div className="noUserInput">
@@ -27,21 +50,9 @@ const Content = () => {
       </div>
     );
   };
-  const getData = async () => {
-    if (userInput.length > 0) {
-      const response2 = await fetch(
-        `http://api.weatherapi.com/v1/forecast.json?key=030082f3dc234b4181f111631221005&q=${userInput}&days=3`
-      );
-      const data2 = await response2.json();
-      if (data2.error) {
-        setIsError(true);
-        return;
-      } else {
-        setIsError(false);
-        setData(data2);
-      }
-    }
-  };
+
+  useStoreData();
+
   return (
     <>
       <section className={darkMode ? "sectionInfoDark" : "sectionInfoWhite"}>

@@ -8,8 +8,8 @@ module.exports = {
         forWhite: "#2cb67d",
         darkThemeBack: "#0f0e17",
         whiteThemeBack: "#fffffe",
-        textForDark: '#fffffe',
-        textForWhite: '#242629',
+        textForDark: "#fffffe",
+        textForWhite: "#242629",
       },
       keyframes: {
         toggleAnimation: {
@@ -39,10 +39,10 @@ module.exports = {
         spinSun: "spinSun 500ms ease-in-out",
         moonPulse: "moonPulse 500ms ease-in-out",
         toggleAnimation: "toggleAnimation 500ms ease-in-out",
-        spinSlow: 'spin 3s linear infinite',
+        spinSlow: "spin 3s linear infinite",
       },
       fontFamily: {
-        sofia: ['Sofia Pro', 'sans-serif'],
+        sofia: ["Sofia Pro", "sans-serif"],
       },
     },
   },

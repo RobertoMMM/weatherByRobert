@@ -1,40 +1,15 @@
-import { useContext } from "react";
 import { HiLocationMarker } from "react-icons/hi";
 import { RiCelsiusFill } from "react-icons/ri";
-import { ThemeContext } from "../../../store/context";
+import useDate from "../../../hooks/use-date";
+import useStoreData from "../../../hooks/use-store";
 import "./currentweather.css";
 
 const CurrentWeather = () => {
-  const { allData, darkMode } = useContext(ThemeContext);
-  let localDate = new Date(allData.location.localtime);
-  let localDay = localDate.getDate();
-  let localYear = localDate.getFullYear();
+  const { allData, darkMode } = useStoreData();
 
-  const toMonthName = (monthNumber) => {
-    const date = new Date();
-    date.setMonth(monthNumber - 1);
-
-    return date.toLocaleString("en-US", {
-      month: "short",
-    });
-  };
-
-  const toDayName = (localTime) => {
-    let daysWeek = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-    ];
-    let dateNumber = new Date(localTime);
-    return daysWeek[dateNumber.getDay()];
-  };
-
-  let localMonth = toMonthName(localDate.getMonth());
-  let dayName = toDayName(localDay);
+  const { localYear, localMonth, localDay, dayName } = useDate(
+    allData.location.localtime
+  );
 
   return (
     <>

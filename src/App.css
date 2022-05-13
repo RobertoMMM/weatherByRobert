@@ -1,9 +1,9 @@
-.body{
-  @apply font-sofia
+.body {
+  @apply font-sofia overflow-hidden;
 }
 .darkSec,
 .lightSec {
-  @apply top-0 left-0 absolute w-[100vw] h-[100vh] duration-300;
+  @apply top-0 left-0 absolute w-[100vw] h-[115vh] duration-300 overflow-hidden;
 }
 .darkSec {
   @apply bg-darkThemeBack text-forDark;

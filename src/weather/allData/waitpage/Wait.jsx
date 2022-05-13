@@ -1,13 +1,14 @@
-import { useContext } from "react";
 import { TiWeatherCloudy } from "react-icons/ti";
-import { ThemeContext } from "../../../store/context";
 import "./waitpage.css";
+import useStoreData from "../../../hooks/use-store";
 
 const Wait = () => {
-  const { darkMode } = useContext(ThemeContext);
+  const { darkMode } = useStoreData();
   return (
     <>
-      <TiWeatherCloudy className={darkMode ? "waitIconDark" : "waitIconWhite"} />
+      <TiWeatherCloudy
+        className={darkMode ? "waitIconDark" : "waitIconWhite"}
+      />
     </>
   );
 };
