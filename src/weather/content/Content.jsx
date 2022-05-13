@@ -1,40 +1,25 @@
-import { useContext, useState, useEffect } from "react";
+import { useContext, useEffect } from "react";
 import { ThemeContext } from "../../store/context";
-import { HiOutlineEmojiSad } from "react-icons/hi";
 import { BsKeyboard } from "react-icons/bs";
-import WeatherData from "../data/WeatherData";
-import Wait from "../waitpage/Wait";
 import "./Content.css";
+import DisplayedInfo from "../allData/displayed/DisplayedInfo";
 
 const Content = () => {
-  const [writing, setWriting] = useState(true);
-  const [isErrorCode, setIsErrorCode] = useState(false);
-  const { userInput, setData, allData, darkMode } = useContext(ThemeContext);
+  const { userInput, setData, darkMode, setIsError, setIsWriting } = useContext(ThemeContext);
   useEffect(() => {
     const timeout = setTimeout(() => {
       getData();
-      setWriting(false);
-    }, 500);
+      setIsWriting(false);
+    }, 600);
     return () => {
       clearTimeout(timeout);
-      setWriting(true);
+      setIsWriting(true);
+      setIsError(false)
     };
   }, [userInput]);
-  const DiplayedInfo = () => {
-    if (isErrorCode) {
-      return (
-        <>
-          <p className="notFound">
-            <HiOutlineEmojiSad className="float-left text-5xl flex mr-4 text-forDark animate-pulse" />
-            Try another location
-          </p>
-        </>
-      );
-    } else {
-      return <>{writing ? <Wait /> : allData && <WeatherData />}</>;
-    }
-  };
   const NoUserInput = () => {
+    if(userInput.length <= 0){
+    }
     return (
       <div className="noUserInput">
         <p>Check weather around the world</p>
@@ -48,12 +33,11 @@ const Content = () => {
         `http://api.weatherapi.com/v1/forecast.json?key=030082f3dc234b4181f111631221005&q=${userInput}&days=3`
       );
       const data2 = await response2.json();
-      console.log(data2);
       if (data2.error) {
-        setIsErrorCode(true);
+        setIsError(true);
         return;
       } else {
-        setIsErrorCode(false);
+        setIsError(false);
         setData(data2);
       }
     }
@@ -62,7 +46,7 @@ const Content = () => {
     <>
       <section className={darkMode ? "sectionInfoDark" : "sectionInfoWhite"}>
         {!userInput && <NoUserInput />}
-        {userInput && <DiplayedInfo />}
+        {userInput && <DisplayedInfo />}
       </section>
     </>
   );

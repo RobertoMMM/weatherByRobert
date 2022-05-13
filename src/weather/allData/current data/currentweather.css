@@ -1,12 +1,12 @@
 .weatherDataSectionDark,
 .weatherDataSectionLight {
-  @apply h-72 w-72 md:h-80 md:w-96 rounded-2xl border-2 border-forDark text-slate-300;
+  @apply h-72 w-72 md:h-96 md:w-80 rounded-2xl text-slate-300;
 }
 .weatherDataSectionLight {
-  @apply border-forWhite text-slate-700;
+  @apply bg-forWhite text-slate-700;
 }
 .weatherDataSectionDark {
-  @apply border-forDark text-slate-300;
+  @apply bg-forDark text-slate-300;
 }
 .localUserData {
   @apply ml-10 mt-10;

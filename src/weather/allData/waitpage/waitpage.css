@@ -1,0 +1,9 @@
+.waitIconDark, .waitIconWhite {
+  @apply text-[5rem] absolute top-16 animate-[ping_0.7s_infinite];
+}
+.waitIconDark{
+  @apply text-forDark
+}
+.waitIconWhite {
+  @apply text-forWhite;
+}

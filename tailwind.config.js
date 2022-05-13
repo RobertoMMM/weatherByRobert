@@ -39,6 +39,7 @@ module.exports = {
         spinSun: "spinSun 500ms ease-in-out",
         moonPulse: "moonPulse 500ms ease-in-out",
         toggleAnimation: "toggleAnimation 500ms ease-in-out",
+        spinSlow: 'spin 3s linear infinite',
       },
       fontFamily: {
         sofia: ['Sofia Pro', 'sans-serif'],

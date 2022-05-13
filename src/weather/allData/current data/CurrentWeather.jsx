@@ -1,12 +1,12 @@
 import { useContext } from "react";
-import { ThemeContext } from "../../store/context";
 import { HiLocationMarker } from "react-icons/hi";
 import { RiCelsiusFill } from "react-icons/ri";
-import "./weatherData.css";
+import { ThemeContext } from "../../../store/context";
+import "./currentweather.css";
 
-const WeatherData = () => {
+const CurrentWeather = () => {
   const { allData, darkMode } = useContext(ThemeContext);
-  let localDate = new Date(allData.location.localtime); 
+  let localDate = new Date(allData.location.localtime);
   let localDay = localDate.getDate();
   let localYear = localDate.getFullYear();
 
@@ -67,4 +67,4 @@ const WeatherData = () => {
   );
 };
 
-export default WeatherData;
+export default CurrentWeather;

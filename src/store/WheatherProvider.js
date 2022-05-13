@@ -5,6 +5,8 @@ const initialState = {
   darkMode: true,
   userInput: "",
   allData: "",
+  isError: "",
+  isWriting: ""
 };
 
 const themeReducer = (state, action) => {
@@ -20,6 +22,10 @@ const themeReducer = (state, action) => {
         ...state,
         allData: action.payload,
       };
+    case "SETERROR":
+        return { ...state, isError: action.payload }
+    case "ISWRITING" : 
+      return { ...state, isWriting: action.payload}
     default:
       return state;
   }
@@ -38,13 +44,23 @@ export function ThemeProvider(props) {
   const setData = (allData) => {
     dispatch({ type: "GETDATA", payload: allData });
   };
+  const setIsError = (error) => {
+    dispatch({ type: "SETERROR", payload: error });
+  }
+  const setIsWriting = (isWriting) => {
+    dispatch({ type: "ISWRITING", payload: isWriting });
+  }
   const value = {
     darkMode: state.darkMode,
     userInput: state.userInput,
+    allData: state.allData,
+    isError: state.isError,
+    isWriting: state.isWriting,
     changheDark: changheDark,
     getUserInput: getUserInput,
-    allData: state.allData,
     setData: setData,
+    setIsError: setIsError,
+    setIsWriting: setIsWriting
   };
   return (
     <ThemeContext.Provider value={value}>
