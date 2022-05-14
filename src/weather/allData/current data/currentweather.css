@@ -28,5 +28,5 @@
   @apply flex;
 }
 .localCondition {
-  @apply text-lg absolute bottom-3 w-40 mr-0;
+  @apply text-lg absolute bottom-7 w-40 mr-0;
 }

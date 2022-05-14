@@ -10,6 +10,7 @@ const CurrentWeather = () => {
   const { localYear, localMonth, localDay, dayName } = useDate(
     allData.location.localtime
   );
+  let conditionLength = allData.current.condition.text.length;
 
   return (
     <>
@@ -35,7 +36,11 @@ const CurrentWeather = () => {
             {allData.current.temp_c}
             <RiCelsiusFill />
           </div>
-          <div className="localCondition">{allData.current.condition.text}</div>
+          <div className="localCondition">
+            {conditionLength <= 13
+              ? allData.current.condition.text
+              : allData.current.condition.text.substring(0, 13) + "..."}
+          </div>
         </div>
       </section>
     </>

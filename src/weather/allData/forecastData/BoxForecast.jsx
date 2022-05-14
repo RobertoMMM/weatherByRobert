@@ -1,19 +1,23 @@
 import useDate from "../../../hooks/use-date";
+import useStoreData from "../../../hooks/use-store";
 import { BsFillCloudPlusFill, BsFillCloudMinusFill } from "react-icons/bs";
 import "./BoxForecast.css";
-import useStoreData from "../../../hooks/use-store";
 
 const BoxForecast = ({ description, maxtemp, mintemp, date }) => {
   const { darkMode } = useStoreData();
 
   const { dayName } = useDate(date);
-
+  let conditionLength = description;
   return (
     <>
       <div className={darkMode ? "mainBoxDark" : "mainBoxWhite"}>
         <div className="forecastDate">
           <div className="forecastDay">{dayName}</div>
-          <p className="descriptionDay">{description}</p>
+          <p className="descriptionDay">
+            {conditionLength <= 20
+              ? description
+              : description.substring(0, 20) + "..."}
+          </p>
         </div>
         <div className="arrowsMaxMinTemp">
           <BsFillCloudPlusFill

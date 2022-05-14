@@ -1,5 +1,5 @@
 import CurrentWeather from "../current data/CurrentWeather";
-import ForecastWeather from "../forecastData/ForecastWeather"
+import ForecastWeather from "../forecastData/ForecastWeather";
 const AllWeather = () => {
   return (
     <>
