@@ -7,14 +7,14 @@ const BoxForecast = ({ description, maxtemp, mintemp, date }) => {
   const { darkMode } = useStoreData();
 
   const { dayName } = useDate(date);
-  let conditionLength = description;
+  let conditionLength = description.length;
   return (
     <>
       <div className={darkMode ? "mainBoxDark" : "mainBoxWhite"}>
         <div className="forecastDate">
           <div className="forecastDay">{dayName}</div>
           <p className="descriptionDay">
-            {conditionLength <= 20
+            {conditionLength < 20
               ? description
               : description.substring(0, 20) + "..."}
           </p>

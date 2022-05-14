@@ -37,7 +37,7 @@ const CurrentWeather = () => {
             <RiCelsiusFill />
           </div>
           <div className="localCondition">
-            {conditionLength <= 13
+            {conditionLength < 13
               ? allData.current.condition.text
               : allData.current.condition.text.substring(0, 13) + "..."}
           </div>
