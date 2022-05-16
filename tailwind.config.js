@@ -22,6 +22,16 @@ module.exports = {
             opacity: 1,
           },
         },
+        formAnimation: {
+          "0%": {
+            transform: "translate(-50%, -100%)",
+            opacity: 0,
+          },
+          "100%": {
+            transform: "translateY(-50%, -50%)",
+            opacity: 1,
+          },
+        },
         spinSun: {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
@@ -40,6 +50,7 @@ module.exports = {
         moonPulse: "moonPulse 500ms ease-in-out",
         toggleAnimation: "toggleAnimation 500ms ease-in-out",
         spinSlow: "spin 3s linear infinite",
+        formAnimation: 'formAnimation 300ms '
       },
       fontFamily: {
         sofia: ["Sofia Pro", "sans-serif"],

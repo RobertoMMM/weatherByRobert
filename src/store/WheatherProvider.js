@@ -7,6 +7,8 @@ const initialState = {
   allData: "",
   isError: "",
   isWriting: "",
+  isOpenModal: false,
+  isSignIn: true
 };
 
 const themeReducer = (state, action) => {
@@ -26,6 +28,10 @@ const themeReducer = (state, action) => {
       return { ...state, isError: action.payload };
     case "ISWRITING":
       return { ...state, isWriting: action.payload };
+    case "ISOPENMODAL":
+      return { ...state, isOpenModal: action.payload };
+    case "ISSIGNIN":
+      return { ...state, isSignIn: action.payload };
     default:
       return state;
   }
@@ -50,17 +56,27 @@ export function ThemeProvider(props) {
   const setIsWriting = (isWriting) => {
     dispatch({ type: "ISWRITING", payload: isWriting });
   };
+  const setIsOpenModal = (isOpen) => {
+    dispatch({ type: "ISOPENMODAL", payload: isOpen });
+  }
+  const setIsSignIn = (isSignIn) => {
+    dispatch({ type: "ISSIGNIN", payload: isSignIn });
+  }
   const value = {
     darkMode: state.darkMode,
     userInput: state.userInput,
     allData: state.allData,
     isError: state.isError,
     isWriting: state.isWriting,
-    changheDark: changheDark,
-    getUserInput: getUserInput,
-    setData: setData,
-    setIsError: setIsError,
-    setIsWriting: setIsWriting,
+    isOpenModal: state.isOpenModal,
+    isSignIn: state.isSignIn,
+    setIsSignIn,
+    changheDark,
+    getUserInput,
+    setData,
+    setIsError,
+    setIsWriting,
+    setIsOpenModal
   };
   return (
     <ThemeContext.Provider value={value}>

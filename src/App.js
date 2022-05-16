@@ -3,6 +3,7 @@ import { ThemeContext } from "./store/context";
 import "./App.css";
 import Navbar from "./navbar/Navbar";
 import Content from "./weather/content/Content";
+import AuthModal from "./navbar/AuthModal/AuthModal";
 
 const App = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -10,6 +11,7 @@ const App = () => {
     <section className={darkMode ? "darkSec" : "lightSec"}>
       <Navbar />
       <Content />
+      <AuthModal />
     </section>
   );
 };

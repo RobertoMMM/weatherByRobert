@@ -1,0 +1,30 @@
+.authform {
+  @apply animate-formAnimation fixed top-1/2 left-1/2 -translate-x-1/2 
+  -translate-y-1/2 bg-darkThemeBack  border-forDark border-4 z-50 
+  h-[60%] w-[80%] overflow-hidden sm:w-2/3 md:w-[30rem] lg:h-1/2 lg:w-[40rem]
+  rounded-xl text-white;
+}
+.overlay {
+  @apply fixed inset-0 bg-[rgba(0,0,0,0.5)] z-40;
+}
+.signMsg {
+  @apply absolute top-14 left-1/2 -translate-x-1/2 text-2xl border-b-2 border-forDark;
+}
+.authentication {
+  @apply absolute top-1/2 -translate-y-1/2 h-1/3 w-full;
+}
+.emailPassIcons {
+  @apply mt-10 ml-10 text-3xl ;
+}
+.inputAuth{
+    @apply right-10 absolute flex flex-col gap-10 top-10 w-[70%]
+}
+.inputs{
+    @apply w-2/3 bg-transparent border-b-2 border-forDark focus:outline-none
+}
+.lineOr{
+    @apply absolute top-[70%] left-1/2 -translate-x-1/2 tracking-widest text-xl
+}
+.signWithGoogle{
+  @apply absolute bottom-16 left-1/2 -translate-x-1/2 text-3xl
+}
