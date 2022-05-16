@@ -16,7 +16,7 @@
 .divButtonLigth {
   @apply h-10 min-w-[2.5rem] justify-center 
   text-center flex rounded-xl
-  border-[3px] cursor-pointer border-none relative left-2/3 -translate-x-1/2;
+  border-[3px] cursor-pointer border-none relative left-[68%] -translate-x-1/2;
 }
 .divButtonDark {
   @apply bg-forDark animate-toggleAnimation;
