@@ -4,10 +4,9 @@ import { FaSearch } from "react-icons/fa";
 import { RiUserLine } from "react-icons/ri";
 import useStoreData from "../hooks/use-store";
 import "./Navbar.css";
-import AuthModal from "./AuthModal/AuthModal";
 
 const Navbar = () => {
-  const { darkMode, changheDark, getUserInput, userInput, setIsOpenModal, isOpenModal } = useStoreData();
+  const { darkMode, changheDark, getUserInput, userInput, setIsOpenModal} = useStoreData();
   const themeToggler = () => {
     changheDark();
   };
@@ -35,7 +34,7 @@ const Navbar = () => {
         </button>
       </div>
       <div
-        className={`${darkMode ? "divAuthDark" : "divAuthLigth"}`}
+        className={`${darkMode ? "divButtonDark" : "divButtonLigth"}`}
       >
       <button onClick={changheModalVisibility} className={darkMode ? "darkBtn" : "ligthBtn"}>
         <RiUserLine />
