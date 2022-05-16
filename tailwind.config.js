@@ -10,7 +10,6 @@ module.exports = {
         whiteThemeBack: "#fffffe",
         textForDark: "#fffffe",
         textForWhite: "#242629",
-        textos: '#333'
       },
       keyframes: {
         toggleAnimation: {
