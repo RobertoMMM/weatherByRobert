@@ -6,13 +6,14 @@ import useStoreData from "../hooks/use-store";
 import "./Navbar.css";
 
 const Navbar = () => {
-  const { darkMode, changheDark, getUserInput, userInput, setIsOpenModal} = useStoreData();
+  const { darkMode, changheDark, getUserInput, userInput, setIsOpenModal } =
+    useStoreData();
   const themeToggler = () => {
     changheDark();
   };
   const changheModalVisibility = () => {
-    setIsOpenModal(true)
-  }
+    setIsOpenModal(true);
+  };
   return (
     <div className="navbarSearch">
       <label className="labelInput">
@@ -33,12 +34,13 @@ const Navbar = () => {
           {darkMode ? <ImSun /> : <BiMoon />}
         </button>
       </div>
-      <div
-        className={`${darkMode ? "divButtonDark" : "divButtonLigth"}`}
-      >
-      <button onClick={changheModalVisibility} className={darkMode ? "darkBtn" : "ligthBtn"}>
-        <RiUserLine />
-      </button>
+      <div className={`${darkMode ? "divButtonDark" : "divButtonLigth"}`}>
+        <button
+          onClick={changheModalVisibility}
+          className={darkMode ? "darkBtn" : "ligthBtn"}
+        >
+          <RiUserLine />
+        </button>
       </div>
     </div>
   );

@@ -8,7 +8,10 @@ const initialState = {
   isError: "",
   isWriting: "",
   isOpenModal: false,
-  isSignIn: true
+  isSignIn: true,
+  password: "",
+  email: "",
+  responseFromServer: ''
 };
 
 const themeReducer = (state, action) => {
@@ -32,6 +35,12 @@ const themeReducer = (state, action) => {
       return { ...state, isOpenModal: action.payload };
     case "ISSIGNIN":
       return { ...state, isSignIn: action.payload };
+    case "EMAIL":
+      return { ...state, email: action.payload };
+    case "PASS":
+      return { ...state, password: action.payload };
+    case "RESPONSE":
+      return { ...state, responseFromServer: action.payload };
     default:
       return state;
   }
@@ -58,10 +67,19 @@ export function ThemeProvider(props) {
   };
   const setIsOpenModal = (isOpen) => {
     dispatch({ type: "ISOPENMODAL", payload: isOpen });
-  }
+  };
   const setIsSignIn = (isSignIn) => {
     dispatch({ type: "ISSIGNIN", payload: isSignIn });
-  }
+  };
+  const setEmail = (email) => {
+    dispatch({ type: "EMAIL", payload: email });
+  };
+  const setPassword = (pass) => {
+    dispatch({ type: "PASS", payload: pass });
+  };
+  const setResponseFromServer = (response) => {
+    dispatch({ type: "RESPONSE", payload: response });
+  };
   const value = {
     darkMode: state.darkMode,
     userInput: state.userInput,
@@ -70,13 +88,19 @@ export function ThemeProvider(props) {
     isWriting: state.isWriting,
     isOpenModal: state.isOpenModal,
     isSignIn: state.isSignIn,
+    email: state.email,
+    password: state.password,
+    responseFromServer: state.responseFromServer,
+    setEmail,
+    setPassword,
     setIsSignIn,
     changheDark,
     getUserInput,
     setData,
     setIsError,
     setIsWriting,
-    setIsOpenModal
+    setIsOpenModal,
+    setResponseFromServer
   };
   return (
     <ThemeContext.Provider value={value}>

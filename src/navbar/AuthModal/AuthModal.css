@@ -8,23 +8,29 @@
   @apply fixed inset-0 bg-[rgba(0,0,0,0.5)] z-40;
 }
 .signMsg {
-  @apply absolute top-14 left-1/2 -translate-x-1/2 text-2xl border-b-2 border-forDark;
+  @apply absolute top-10 left-1/2 -translate-x-1/2 text-2xl;
 }
 .authentication {
-  @apply absolute top-1/2 -translate-y-1/2 h-1/3 w-full;
+  @apply absolute top-1/3 -translate-y-1/3 h-1/3 w-full;
 }
 .emailPassIcons {
-  @apply mt-10 ml-10 text-3xl ;
+  @apply ml-5 sm:ml-10 mt-10 lg:ml-20 text-3xl;
 }
-.inputAuth{
-    @apply right-10 absolute flex flex-col gap-10 top-10 w-[70%]
+.inputAuth {
+  @apply right-2 sm:right-10 absolute flex flex-col gap-10 top-10 w-[70%];
 }
-.inputs{
-    @apply w-2/3 bg-transparent border-b-2 border-forDark focus:outline-none
+.inputs {
+  @apply w-2/3 bg-transparent border-b-2 border-forDark focus:outline-none;
 }
-.lineOr{
-    @apply absolute top-[70%] left-1/2 -translate-x-1/2 tracking-widest text-xl
+.lineOr {
+  @apply top-[60%] absolute sm:top-[60%] md:top-[65%] left-1/2 -translate-x-1/2 tracking-widest text-xl;
 }
-.signWithGoogle{
-  @apply absolute bottom-16 left-1/2 -translate-x-1/2 text-3xl
+.signWithGoogle {
+  @apply cursor-pointer absolute bottom-16 sm:bottom-28 left-32 sm:left-1/3 -translate-x-1/2 text-2xl inline-flex gap-4 items-center;
+}
+.haveAnAccount {
+  @apply absolute bottom-5 sm:bottom-10 right-10 cursor-pointer;
+}
+.buttonSubmit {
+    @apply absolute top-32 bg-transparent w-24 h-10 rounded-lg border-4 border-forDark
 }

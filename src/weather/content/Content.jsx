@@ -3,8 +3,9 @@ import { BsKeyboard } from "react-icons/bs";
 import "./Content.css";
 import DisplayedInfo from "../allData/displayed/DisplayedInfo";
 import useStoreData from "../../hooks/use-store";
+import AuthWeatherData from "../../authweatherdata/AuthWeatherData";
 const Content = () => {
-  const { userInput, setData, darkMode, setIsError, setIsWriting } =
+  const { userInput, setData, darkMode, setIsError, setIsWriting, responseFromServer } =
     useStoreData();
 
   useEffect(() => {
@@ -45,19 +46,18 @@ const Content = () => {
     }
     return (
       <div className="noUserInput">
-        <p>Check weather around the world</p>
+        <p>{responseFromServer ? `Hello ${responseFromServer.user.email} :)` : 'Check weather around the world'}</p>
         <BsKeyboard className={darkMode ? "keyboardDark" : "keyboardWhite"} />
       </div>
     );
   };
-
-  useStoreData();
 
   return (
     <>
       <section className={darkMode ? "sectionInfoDark" : "sectionInfoWhite"}>
         {!userInput && <NoUserInput />}
         {userInput && <DisplayedInfo />}
+        {<AuthWeatherData />}
       </section>
     </>
   );
