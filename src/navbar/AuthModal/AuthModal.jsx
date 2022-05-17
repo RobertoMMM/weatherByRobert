@@ -56,10 +56,10 @@ const AuthModal = () => {
     const getResponse = await getDoc(
       doc(firestore, "users", response.user.uid)
     );
-    if (getResponse._document) {
-      changheDark(
-        getResponse._document.data.value.mapValue.fields.darkMode.booleanValue
-      );
+    changheDark(
+      getResponse._document.data.value.mapValue.fields.darkMode.booleanValue
+    );
+    if (getResponse._document.data) {
     } else {
       setDoc(doc(firestore, "users", response.user.uid), {
         darkMode: darkMode,
@@ -91,6 +91,7 @@ const AuthModal = () => {
     const response = await signInWithEmailAndPassword(auth, email, password);
     setResponseFromServer(response);
     setUserUID(response.user.uid);
+    console.log(response);
     const responseDoc = await getDoc(
       doc(firestore, "users", response.user.uid)
     );

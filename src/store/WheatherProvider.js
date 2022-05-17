@@ -11,7 +11,7 @@ const initialState = {
   isSignIn: true,
   password: "",
   email: "",
-  responseFromServer: ''
+  responseFromServer: "",
 };
 
 const themeReducer = (state, action) => {
@@ -100,7 +100,7 @@ export function ThemeProvider(props) {
     setIsError,
     setIsWriting,
     setIsOpenModal,
-    setResponseFromServer
+    setResponseFromServer,
   };
   return (
     <ThemeContext.Provider value={value}>

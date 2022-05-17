@@ -32,5 +32,5 @@
   @apply absolute bottom-5 sm:bottom-10 right-10 cursor-pointer;
 }
 .buttonSubmit {
-    @apply absolute top-32 bg-transparent w-24 h-10 rounded-lg border-4 border-forDark
+  @apply absolute top-32 bg-transparent w-24 h-10 rounded-lg border-4 border-forDark;
 }
