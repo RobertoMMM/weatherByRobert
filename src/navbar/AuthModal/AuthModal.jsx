@@ -51,24 +51,23 @@ const AuthModal = () => {
   const googleSign = async (e) => {
     e.preventDefault();
     const response = await signInWithPopup(auth, googleProvider);
-    setResponseFromServer(response)
+    setResponseFromServer(response);
     setUserUID(response.user.uid);
-    await getDoc(doc(firestore, "users", response.user.uid)).then(
-      (document) => {
-        if (document._document) {
-          changheDark(
-            document._document.data.value.mapValue.fields.darkMode.booleanValue
-          );
-        } else {
-          setDoc(doc(firestore, "users", response.user.uid), {
-            darkMode: darkMode,
-          });
-          changheDark(
-            document._document.data.value.mapValue.fields.darkMode.booleanValue
-          );
-        }
-      }
+    const getResponse = await getDoc(
+      doc(firestore, "users", response.user.uid)
     );
+    if (getResponse._document) {
+      changheDark(
+        getResponse._document.data.value.mapValue.fields.darkMode.booleanValue
+      );
+    } else {
+      setDoc(doc(firestore, "users", response.user.uid), {
+        darkMode: darkMode,
+      });
+      changheDark(
+        getResponse._document.data.value.mapValue.fields.darkMode.booleanValue
+      );
+    }
     setIsOpenModal(false);
   };
 
@@ -79,7 +78,7 @@ const AuthModal = () => {
       email,
       password
     );
-    setResponseFromServer(response)
+    setResponseFromServer(response);
     setUserUID(response.user.uid);
     await setDoc(doc(firestore, "users", response.user.uid), {
       darkMode: darkMode,
@@ -90,20 +89,21 @@ const AuthModal = () => {
   const loginForm = async (e) => {
     e.preventDefault();
     const response = await signInWithEmailAndPassword(auth, email, password);
-    setResponseFromServer(response)
+    setResponseFromServer(response);
     setUserUID(response.user.uid);
-    await getDoc(doc(firestore, "users", response.user.uid)).then((doc) => {
-      changheDark(
-        doc._document.data.value.mapValue.fields.darkMode.booleanValue
-      );
-    });
+    const responseDoc = await getDoc(
+      doc(firestore, "users", response.user.uid)
+    );
+    changheDark(
+      responseDoc._document.data.value.mapValue.fields.darkMode.booleanValue
+    );
     setIsOpenModal(false);
   };
 
   const logout = async (e) => {
     e.preventDefault();
     const response = signOut(auth);
-    setResponseFromServer(response)
+    setResponseFromServer(response);
     setUserUID(null);
   };
 
