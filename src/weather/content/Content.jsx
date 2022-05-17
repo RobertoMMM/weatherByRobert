@@ -3,7 +3,6 @@ import { BsKeyboard } from "react-icons/bs";
 import "./Content.css";
 import DisplayedInfo from "../allData/displayed/DisplayedInfo";
 import useStoreData from "../../hooks/use-store";
-import AuthWeatherData from "../../authweatherdata/AuthWeatherData";
 const Content = () => {
   const { userInput, setData, darkMode, setIsError, setIsWriting, responseFromServer } =
     useStoreData();
@@ -21,7 +20,6 @@ const Content = () => {
   }, [userInput]);
 
   const getData = async () => {
-    try {
       if (userInput.length > 0) {
         const response2 = await fetch(
           `http://api.weatherapi.com/v1/forecast.json?key=030082f3dc234b4181f111631221005&q=${userInput}&days=3`
@@ -36,9 +34,6 @@ const Content = () => {
           setData(data2);
         }
       }
-    } catch (error) {
-      console.log(error);
-    }
   };
 
   const NoUserInput = () => {
@@ -57,7 +52,6 @@ const Content = () => {
       <section className={darkMode ? "sectionInfoDark" : "sectionInfoWhite"}>
         {!userInput && <NoUserInput />}
         {userInput && <DisplayedInfo />}
-        {<AuthWeatherData />}
       </section>
     </>
   );
