@@ -1,7 +1,7 @@
 .authform {
   @apply animate-formAnimation fixed top-1/2 left-1/2 -translate-x-1/2 
   -translate-y-1/2 bg-darkThemeBack  border-forDark border-4 z-50 
-  h-[70%] w-[80%] overflow-hidden sm:w-2/3 md:w-[30rem] lg:h-1/2 lg:w-[40rem]
+  h-[70%] w-[80%] overflow-hidden sm:w-2/3 md:w-[30rem] lg:h-[65s%] lg:w-[40rem]
   rounded-xl text-white;
 }
 .overlay {

@@ -16,10 +16,8 @@ const initialState = {
 
 const themeReducer = (state, action) => {
   switch (action.type) {
-    case "LIGHTMODE":
-      return { ...state, darkMode: false };
     case "DARKMODE":
-      return { ...state, darkMode: true };
+      return { ...state, darkMode: action.payload };
     case "USERINPUT":
       return { ...state, userInput: action.payload };
     case "GETDATA":
@@ -48,10 +46,8 @@ const themeReducer = (state, action) => {
 
 export function ThemeProvider(props) {
   const [state, dispatch] = useReducer(themeReducer, initialState);
-  const changheDark = () => {
-    state.darkMode
-      ? dispatch({ type: "LIGHTMODE" })
-      : dispatch({ type: "DARKMODE" });
+  const changheDark = (mode) => {
+    dispatch({ type: "DARKMODE", payload: mode });
   };
   const getUserInput = (e) => {
     dispatch({ type: "USERINPUT", payload: e.target.value });

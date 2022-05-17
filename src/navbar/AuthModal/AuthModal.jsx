@@ -56,15 +56,15 @@ const AuthModal = () => {
     const getResponse = await getDoc(
       doc(firestore, "users", response.user.uid)
     );
-    changheDark(
+    await changheDark(
       getResponse._document.data.value.mapValue.fields.darkMode.booleanValue
     );
     if (getResponse._document.data) {
     } else {
-      setDoc(doc(firestore, "users", response.user.uid), {
+      await setDoc(doc(firestore, "users", response.user.uid), {
         darkMode: darkMode,
       });
-      changheDark(
+      await changheDark(
         getResponse._document.data.value.mapValue.fields.darkMode.booleanValue
       );
     }

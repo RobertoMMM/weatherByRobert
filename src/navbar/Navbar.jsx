@@ -9,7 +9,7 @@ const Navbar = () => {
   const { darkMode, changheDark, getUserInput, userInput, setIsOpenModal } =
     useStoreData();
   const themeToggler = () => {
-    changheDark();
+    changheDark(!darkMode);
   };
   const changheModalVisibility = () => {
     setIsOpenModal(true);
