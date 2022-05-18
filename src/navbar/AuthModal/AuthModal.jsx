@@ -15,11 +15,10 @@ import {
   updateDoc,
   signInWithPopup,
   googleProvider,
+  onAuthStateChanged,
 } from "../../firebase/firebaseConfig";
 
 const AuthModal = () => {
-  const [userUID, setUserUID] = useState("");
-
   const {
     isOpenModal,
     setIsOpenModal,
@@ -33,6 +32,23 @@ const AuthModal = () => {
     changheDark,
     setResponseFromServer,
   } = useStoreData();
+
+  const [userUID, setUserUID] = useState("");
+
+  useEffect(() => {
+    onAuthStateChanged(auth, async (currentUser) => {
+      if (currentUser) {
+        setUserUID(currentUser.uid);
+        await setResponseFromServer(currentUser);
+        const getResponse = await getDoc(
+          doc(firestore, "users", currentUser.uid)
+        );
+        await changheDark(
+          getResponse._document.data.value.mapValue.fields.darkMode.booleanValue
+        );
+      }
+    });
+  }, []);
 
   const update = async () => {
     if (userUID) {
@@ -51,27 +67,24 @@ const AuthModal = () => {
   const googleSign = async (e) => {
     e.preventDefault();
     const response = await signInWithPopup(auth, googleProvider);
-    console.log(response)
-    setResponseFromServer(response);
+    setResponseFromServer(response.user);
     setUserUID(response.user.uid);
-    const getResponse = await getDoc(
-      doc(firestore, "users", response.user.uid)
-    );
+    const getResponse = await getDoc(doc(firestore, "users", userUID));
     if (getResponse._document === null) {
-      await setDoc(doc(firestore, "users", response.user.uid), {
+      await setDoc(doc(firestore, "users", userUID), {
         darkMode: darkMode,
       });
       await changheDark(
         getResponse._document.data.value.mapValue.fields.darkMode.booleanValue
       );
-
     } else {
-
       await changheDark(
         getResponse._document.data.value.mapValue.fields.darkMode.booleanValue
       );
     }
     setIsOpenModal(false);
+    setPassword("");
+    setEmail("");
   };
 
   const submit = async (e) => {
@@ -81,35 +94,35 @@ const AuthModal = () => {
       email,
       password
     );
-    setResponseFromServer(response);
-    console.log(response);
+    setResponseFromServer(response.user);
     setUserUID(response.user.uid);
-    await setDoc(doc(firestore, "users", response.user.uid), {
+    await setDoc(doc(firestore, "users", userUID), {
       darkMode: darkMode,
     });
     setIsOpenModal(false);
+    setPassword("");
+    setEmail("");
   };
 
   const loginForm = async (e) => {
     e.preventDefault();
     const response = await signInWithEmailAndPassword(auth, email, password);
-    setResponseFromServer(response);
+    setResponseFromServer(response.user);
     setUserUID(response.user.uid);
-    console.log(response);
-    const responseDoc = await getDoc(
-      doc(firestore, "users", response.user.uid)
-    );
+    const responseDoc = await getDoc(doc(firestore, "users", userUID));
     changheDark(
       responseDoc._document.data.value.mapValue.fields.darkMode.booleanValue
     );
     setIsOpenModal(false);
+    setPassword("");
+    setEmail("");
   };
 
   const logout = async (e) => {
     e.preventDefault();
-    const response = signOut(auth);
-    setResponseFromServer(response);
+    setResponseFromServer(null);
     setUserUID(null);
+    signOut(auth);
   };
 
   return (
@@ -153,6 +166,7 @@ const AuthModal = () => {
             <p onClick={() => setIsSignIn(true)}>I wan't to sign in</p>
           )}
         </div>
+        <button onClick={logout}>LogOut</button>
       </div>
       <div className="overlay" onClick={() => setIsOpenModal(false)}></div>
     </div>

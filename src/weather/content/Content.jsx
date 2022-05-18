@@ -49,7 +49,7 @@ const Content = () => {
       <div className="noUserInput">
         <p>
           {responseFromServer
-            ? `Hello ${responseFromServer.user.email} :)`
+            ? `Hello ${responseFromServer.email} :)`
             : "Check weather around the world"}
         </p>
         <BsKeyboard className={darkMode ? "keyboardDark" : "keyboardWhite"} />

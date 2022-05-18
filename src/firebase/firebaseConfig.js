@@ -7,6 +7,7 @@ import {
   signInWithEmailAndPassword,
   signInWithPopup,
   GoogleAuthProvider,
+  onAuthStateChanged,
 } from "firebase/auth";
 import {
   getFirestore,
@@ -43,4 +44,5 @@ export {
   updateDoc,
   googleProvider,
   signInWithPopup,
+  onAuthStateChanged,
 };
