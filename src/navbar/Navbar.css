@@ -40,3 +40,6 @@
 .searchIcon {
   @apply text-2xl ml-4;
 }
+.photoGoggle {
+  @apply h-10 w-10 absolute rounded-lg right-[10%]
+}
