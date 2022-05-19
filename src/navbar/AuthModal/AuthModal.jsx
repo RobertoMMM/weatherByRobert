@@ -69,7 +69,9 @@ const AuthModal = () => {
     const response = await signInWithPopup(auth, googleProvider);
     setResponseFromServer(response.user);
     setUserUID(response.user.uid);
-    const getResponse = await getDoc(doc(firestore, "users", response.user.uid));
+    const getResponse = await getDoc(
+      doc(firestore, "users", response.user.uid)
+    );
     console.log(getResponse._document);
     if (!getResponse._document) {
       await setDoc(doc(firestore, "users", response.user.uid), {
@@ -115,7 +117,9 @@ const AuthModal = () => {
       const response = await signInWithEmailAndPassword(auth, email, password);
       await setResponseFromServer(response.user);
       setUserUID(response.user.uid);
-      const responseDoc = await getDoc(doc(firestore, "users", response.user.uid));
+      const responseDoc = await getDoc(
+        doc(firestore, "users", response.user.uid)
+      );
       changheDark(
         responseDoc._document.data.value.mapValue.fields.darkMode.booleanValue
       );
