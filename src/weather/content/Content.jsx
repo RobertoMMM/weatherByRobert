@@ -3,6 +3,7 @@ import { BsKeyboard } from "react-icons/bs";
 import "./Content.css";
 import DisplayedInfo from "../allData/displayed/DisplayedInfo";
 import useStoreData from "../../hooks/use-store";
+import MoonSun from "../../setRise/MoonSun";
 const Content = () => {
   const {
     userInput,
@@ -11,6 +12,9 @@ const Content = () => {
     setIsError,
     setIsWriting,
     responseFromServer,
+    isWriting,
+    isError,
+    setDataAstronomical,
   } = useStoreData();
 
   useEffect(() => {
@@ -27,17 +31,23 @@ const Content = () => {
 
   const getData = async () => {
     if (userInput.length > 0) {
-      const response2 = await fetch(
+      const dataResponseWeather = await fetch(
         `http://api.weatherapi.com/v1/forecast.json?key=030082f3dc234b4181f111631221005&q=${userInput}&days=3`
       );
-      const data2 = await response2.json();
-      console.log(data2);
-      if (data2.error) {
+      const dataTransformerWeather = await dataResponseWeather.json();
+
+      const dataResponseAstronomical = await fetch(
+        `https://api.weatherapi.com/v1/astronomy.json?key=030082f3dc234b4181f111631221005&q=${userInput}`
+      );
+      const dataTransformerAstronomical = await dataResponseAstronomical.json();
+      console.log(dataTransformerAstronomical);
+      if (dataTransformerWeather.error || dataTransformerAstronomical.error) {
         setIsError(true);
         return;
       } else {
         setIsError(false);
-        setData(data2);
+        setData(dataTransformerWeather);
+        setDataAstronomical(dataTransformerAstronomical);
       }
     }
   };
@@ -62,6 +72,7 @@ const Content = () => {
       <section className={darkMode ? "sectionInfoDark" : "sectionInfoWhite"}>
         {!userInput && <NoUserInput />}
         {userInput && <DisplayedInfo />}
+        {userInput && !isWriting && !isError && <MoonSun />}
       </section>
     </>
   );

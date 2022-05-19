@@ -1,6 +1,6 @@
 .sectionInfoDark,
 .sectionInfoWhite {
-  @apply justify-center flex relative top-[25%] md:top-1/3 font-bold tracking-wider;
+  @apply justify-center flex relative top-56 md:top-96 font-bold tracking-wider;
 }
 .sectionInfoDark {
   @apply text-textForDark;

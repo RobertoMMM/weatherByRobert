@@ -3,7 +3,7 @@
 }
 .darkSec,
 .lightSec {
-  @apply top-0 left-0 absolute w-[100vw] h-[120vh] duration-300;
+  @apply top-0 left-0 absolute w-[100vw] h-[125rem] duration-300;
 }
 .darkSec {
   @apply bg-darkThemeBack text-forDark;

@@ -89,33 +89,41 @@ const AuthModal = () => {
 
   const submit = async (e) => {
     e.preventDefault();
-    const response = await createUserWithEmailAndPassword(
-      auth,
-      email,
-      password
-    );
-    setResponseFromServer(response.user);
-    setUserUID(response.user.uid);
-    await setDoc(doc(firestore, "users", userUID), {
-      darkMode: darkMode,
-    });
-    setIsOpenModal(false);
-    setPassword("");
-    setEmail("");
+    try{
+      const response = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      setResponseFromServer(response.user);
+      setUserUID(response.user.uid);
+      await setDoc(doc(firestore, "users", userUID), {
+        darkMode: darkMode,
+      });
+      setIsOpenModal(false);
+      setPassword("");
+      setEmail("");
+    }catch(err){
+      alert("Error: " + err)
+    }
   };
 
   const loginForm = async (e) => {
     e.preventDefault();
-    const response = await signInWithEmailAndPassword(auth, email, password);
-    setResponseFromServer(response.user);
-    setUserUID(response.user.uid);
-    const responseDoc = await getDoc(doc(firestore, "users", userUID));
-    changheDark(
-      responseDoc._document.data.value.mapValue.fields.darkMode.booleanValue
-    );
-    setIsOpenModal(false);
-    setPassword("");
-    setEmail("");
+    try{
+      const response = await signInWithEmailAndPassword(auth, email, password);
+      setResponseFromServer(response.user);
+      setUserUID(response.user.uid);
+      const responseDoc = await getDoc(doc(firestore, "users", userUID));
+      changheDark(
+        responseDoc._document.data.value.mapValue.fields.darkMode.booleanValue
+      );
+      setIsOpenModal(false);
+      setPassword("");
+      setEmail("");
+    }catch(err){
+      alert("Error: " + err)
+    }
   };
 
   const logout = async (e) => {
@@ -166,7 +174,7 @@ const AuthModal = () => {
             <p onClick={() => setIsSignIn(true)}>I wan't to sign in</p>
           )}
         </div>
-        <button onClick={logout}>LogOut</button>
+        <button onClick={logout} className="logOut">LogOut</button>
       </div>
       <div className="overlay" onClick={() => setIsOpenModal(false)}></div>
     </div>

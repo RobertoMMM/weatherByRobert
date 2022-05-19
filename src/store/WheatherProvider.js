@@ -12,6 +12,7 @@ const initialState = {
   password: "",
   email: "",
   responseFromServer: "",
+  dataAstronomical: ''
 };
 
 const themeReducer = (state, action) => {
@@ -39,6 +40,8 @@ const themeReducer = (state, action) => {
       return { ...state, password: action.payload };
     case "RESPONSE":
       return { ...state, responseFromServer: action.payload };
+    case "DATAASTRONOMICAL":
+      return { ...state, dataAstronomical: action.payload };
     default:
       return state;
   }
@@ -76,6 +79,9 @@ export function ThemeProvider(props) {
   const setResponseFromServer = (response) => {
     dispatch({ type: "RESPONSE", payload: response });
   };
+  const setDataAstronomical = (data) => {
+    dispatch({ type: "DATAASTRONOMICAL", payload: data });
+  };
   const value = {
     darkMode: state.darkMode,
     userInput: state.userInput,
@@ -87,6 +93,8 @@ export function ThemeProvider(props) {
     email: state.email,
     password: state.password,
     responseFromServer: state.responseFromServer,
+    dataAstronomical: state.dataAstronomical,
+    setDataAstronomical,
     setEmail,
     setPassword,
     setIsSignIn,
