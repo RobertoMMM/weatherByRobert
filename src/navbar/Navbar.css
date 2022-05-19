@@ -1,6 +1,6 @@
 .navbarSearch {
   @apply fixed w-full top-5 gap-2 h-16 flex items-center rounded-xl
-  md:min-w-[10rem] md:top-[12vh] md:gap-4 left-8 ;
+  md:min-w-[10rem] md:top-[12vh] md:gap-4 left-8;
 }
 .darkBtn,
 .ligthBtn {
