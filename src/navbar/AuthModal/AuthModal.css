@@ -1,14 +1,18 @@
-.authform {
+.authformDark,
+.authformLight {
   @apply animate-formAnimation fixed top-1/2 left-1/2 -translate-x-1/2 
   -translate-y-1/2 bg-darkThemeBack  border-forDark border-4 z-50 
   h-[32rem] w-[80%] overflow-hidden sm:w-2/3 md:w-[30rem] lg:h-[65s%] lg:w-[40rem]
-  rounded-xl text-white;
+  rounded-xl text-textForDark;
+}
+.authformLight {
+  @apply bg-whiteThemeBack  border-forWhite text-textForWhite;
 }
 .overlay {
   @apply fixed inset-0 bg-[rgba(0,0,0,0.5)] z-40;
 }
 .signMsg {
-  @apply absolute top-10 left-1/2 -translate-x-1/2 text-2xl;
+  @apply absolute top-10 left-1/2 -translate-x-1/2 text-2xl font-medium;
 }
 .authentication {
   @apply absolute top-1/3 -translate-y-1/3 h-1/3 w-full;
@@ -19,8 +23,12 @@
 .inputAuth {
   @apply right-2 sm:right-10 absolute flex flex-col gap-10 top-10 w-[70%];
 }
-.inputs {
+.inputsDark,
+.inputsLight {
   @apply w-2/3 bg-transparent border-b-2 border-forDark focus:outline-none;
+}
+.inputsLight {
+  @apply border-forWhite;
 }
 .lineOr {
   @apply top-[60%] absolute sm:top-[60%] md:top-[65%] left-1/2 -translate-x-1/2 
@@ -30,17 +38,31 @@
   @apply cursor-pointer relative top-[75%] sm:bottom-28 left-32 sm:left-1/3 
   -translate-x-1/2 text-2xl inline-flex gap-4 items-center;
 }
-.haveAnAccount,
-.logOut {
+.haveAnAccountLight,
+.haveAnAccountDark,
+.logOutDark,
+.logOutLight {
   @apply absolute rounded-lg border-4 border-forDark items-center justify-center 
   cursor-pointer bottom-3 bg-transparent flex;
 }
-.haveAnAccount {
+.haveAnAccountLight,
+.haveAnAccountDark {
   @apply sm:bottom-10 right-3 w-36 h-10;
 }
-.buttonSubmit {
+.haveAnAccountLight {
+  @apply border-forWhite;
+}
+.buttonSubmitLight,
+.buttonSubmitDark {
   @apply absolute top-32 bg-transparent w-24 h-10 rounded-lg border-4 border-forDark;
 }
-.logOut {
+.buttonSubmitLight {
+  @apply border-forWhite;
+}
+.logOutDark,
+.logOutLight {
   @apply left-3 w-20 h-8;
+}
+.logOutLight {
+  @apply border-forWhite;
 }

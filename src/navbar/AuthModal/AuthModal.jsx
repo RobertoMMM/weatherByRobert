@@ -134,8 +134,8 @@ const AuthModal = () => {
   };
 
   return (
-    <div className="AuthModal">
-      <div className="authform">
+    <div>
+      <div className={darkMode ? "authformDark" : "authformLight"}>
         <p className="signMsg">Let's {isSignIn ? "Sign In" : "SignUp"} !</p>
         <div className="authentication">
           <div className="emailPassIcons">
@@ -147,19 +147,22 @@ const AuthModal = () => {
           <form className="inputAuth" onSubmit={isSignIn ? loginForm : submit}>
             <input
               type="email"
-              className="inputs"
+              className={darkMode ? "inputsDark" : "inputsLight"}
               placeholder="Enter your email..."
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
               type="password"
-              className="inputs"
+              className={darkMode ? "inputsDark" : "inputsLight"}
               placeholder="Secret code..."
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
-            <button type="submit" className="buttonSubmit">
+            <button
+              type="submit"
+              className={darkMode ? "buttonSubmitDark" : "buttonSubmitLight"}
+            >
               Let's Go
             </button>
           </form>
@@ -167,14 +170,17 @@ const AuthModal = () => {
         <div className="signWithGoogle" onClick={googleSign}>
           <FcGoogle style={{ fontSize: "1.8rem" }} /> <p>Sign with Google</p>
         </div>
-        <div className="haveAnAccount">
+        <div className={darkMode ? "haveAnAccountDark" : "haveAnAccountLight"}>
           {isSignIn ? (
             <p onClick={() => setIsSignIn(false)}>I wan't to sign out</p>
           ) : (
             <p onClick={() => setIsSignIn(true)}>I wan't to sign in</p>
           )}
         </div>
-        <button onClick={logout} className="logOut">
+        <button
+          onClick={logout}
+          className={darkMode ? "logOutDark" : "logOutLight"}
+        >
           LogOut
         </button>
       </div>
