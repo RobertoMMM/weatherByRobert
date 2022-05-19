@@ -69,7 +69,7 @@ const AuthModal = () => {
     const response = await signInWithPopup(auth, googleProvider);
     setResponseFromServer(response.user);
     setUserUID(response.user.uid);
-    const getResponse = await getDoc(doc(firestore, "users", userUID));
+    const getResponse = await getDoc(doc(firestore, "users", response.user.uid));
     if (getResponse._document === null) {
       await setDoc(doc(firestore, "users", userUID), {
         darkMode: darkMode,
