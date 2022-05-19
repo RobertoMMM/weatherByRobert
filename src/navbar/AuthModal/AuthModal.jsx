@@ -89,7 +89,7 @@ const AuthModal = () => {
 
   const submit = async (e) => {
     e.preventDefault();
-    try{
+    try {
       const response = await createUserWithEmailAndPassword(
         auth,
         email,
@@ -103,14 +103,14 @@ const AuthModal = () => {
       setIsOpenModal(false);
       setPassword("");
       setEmail("");
-    }catch(err){
-      alert("Error: " + err)
+    } catch (err) {
+      alert("Error: " + err);
     }
   };
 
   const loginForm = async (e) => {
     e.preventDefault();
-    try{
+    try {
       const response = await signInWithEmailAndPassword(auth, email, password);
       setResponseFromServer(response.user);
       setUserUID(response.user.uid);
@@ -121,8 +121,8 @@ const AuthModal = () => {
       setIsOpenModal(false);
       setPassword("");
       setEmail("");
-    }catch(err){
-      alert("Error: " + err)
+    } catch (err) {
+      alert("Error: " + err);
     }
   };
 
@@ -174,7 +174,9 @@ const AuthModal = () => {
             <p onClick={() => setIsSignIn(true)}>I wan't to sign in</p>
           )}
         </div>
-        <button onClick={logout} className="logOut">LogOut</button>
+        <button onClick={logout} className="logOut">
+          LogOut
+        </button>
       </div>
       <div className="overlay" onClick={() => setIsOpenModal(false)}></div>
     </div>

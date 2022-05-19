@@ -5,23 +5,24 @@
   @apply text-2xl;
 }
 .sun {
-  @apply absolute top-20 sm:-left-[7rem] justify-center  ;  
+  @apply absolute top-20 sm:-left-[7rem] justify-center;
 }
 .moon {
-  @apply absolute top-56 md:top-80 sm:-left-[7rem] justify-center ;  
+  @apply absolute top-56 md:top-80 sm:-left-[7rem] justify-center;
 }
 .imagesSunMoon {
   @apply md:w-32 w-20 sm:left-0;
 }
-.arrowUpDown{
-  @apply absolute top-1/4 sm:top-[20%] md:top-1/3 left-48 sm:left-80 md:left-[22rem] text-3xl md:text-4xl
+.arrowUpDown {
+  @apply absolute top-1/4 sm:top-[20%] md:top-1/3 left-48 sm:left-80 md:left-[22rem] text-3xl md:text-4xl;
 }
-.rise, .set{
-  @apply relative text-sm sm:text-2xl
-} 
-.rise{
-  @apply left-24 -top-12 sm:-top-14 sm:left-36 md:left-44 md:-mt-14  md:-top-6
+.rise,
+.set {
+  @apply relative text-sm sm:text-2xl;
 }
-.set{
-  @apply left-60 -top-[4.2rem] sm:-top-[5.5rem] md:-top-14 sm:left-[26rem] md:left-[28rem] bottom-8 
+.rise {
+  @apply left-24 -top-12 sm:-top-14 sm:left-36 md:left-44 md:-mt-14  md:-top-6;
+}
+.set {
+  @apply left-60 -top-[4.2rem] sm:-top-[5.5rem] md:-top-14 sm:left-[26rem] md:left-[28rem] bottom-8;
 }

@@ -12,7 +12,7 @@ const initialState = {
   password: "",
   email: "",
   responseFromServer: "",
-  dataAstronomical: ''
+  dataAstronomical: "",
 };
 
 const themeReducer = (state, action) => {
