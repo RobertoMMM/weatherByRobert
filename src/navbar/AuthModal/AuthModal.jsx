@@ -70,8 +70,9 @@ const AuthModal = () => {
     setResponseFromServer(response.user);
     setUserUID(response.user.uid);
     const getResponse = await getDoc(doc(firestore, "users", response.user.uid));
-    if (getResponse._document === null) {
-      await setDoc(doc(firestore, "users", userUID), {
+    console.log(getResponse._document);
+    if (!getResponse._document) {
+      await setDoc(doc(firestore, "users", response.user.uid), {
         darkMode: darkMode,
       });
       await changheDark(
