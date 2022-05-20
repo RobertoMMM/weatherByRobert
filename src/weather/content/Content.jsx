@@ -32,10 +32,10 @@ const Content = () => {
   const getData = async () => {
     if (userInput.length > 0) {
       const dataResponseWeather = await fetch(
-        `http://api.weatherapi.com/v1/forecast.json?key=030082f3dc234b4181f111631221005&q=${userInput}&days=3`
+        `http://api.weatherapi.com/v1/forecast.json?key=030082f3dc234b4181f111631221005&q=${userInput}&days=3&aqi=yes`
       );
       const dataTransformerWeather = await dataResponseWeather.json();
-
+      console.log(dataTransformerWeather);
       const dataResponseAstronomical = await fetch(
         `https://api.weatherapi.com/v1/astronomy.json?key=030082f3dc234b4181f111631221005&q=${userInput}`
       );

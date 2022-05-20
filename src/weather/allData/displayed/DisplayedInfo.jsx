@@ -1,4 +1,4 @@
-import { HiOutlineEmojiSad } from "react-icons/hi";
+import imgSad from "./../../../assets/cloud.png";
 import useStoreData from "../../../hooks/use-store";
 import Wait from "../waitpage/Wait";
 import AllWeather from "./AllWeather";
@@ -10,9 +10,7 @@ const DisplayedInfo = () => {
     return (
       <>
         <p className="notFound">
-          <HiOutlineEmojiSad
-            className={darkMode ? "emojiSadDark" : "emojiSadWhite"}
-          />
+          <img src={imgSad} className="cloudNoResults" />
           Try another location
         </p>
       </>
