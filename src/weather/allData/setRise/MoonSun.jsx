@@ -12,13 +12,13 @@ const MoonSun = () => {
         <div className="SetRiseMain">
           <p className="antenttext">Sunrise / moonset today</p>
           <div className="sun">
-            <img src={imgSun} className="imagesSunMoon" />
+            <img src={imgSun} className="imagesSunMoon" alt="img" />
             <RiArrowUpDownLine className="arrowUpDown" />
             <p className="rise">{dataAstronomical.astronomy.astro.sunrise}</p>
             <p className="set">{dataAstronomical.astronomy.astro.sunset}</p>
           </div>
           <div className="moon">
-            <img src={imgMoon} className="imagesSunMoon" />
+            <img src={imgMoon} className="imagesSunMoon" alt="img" />
             <RiArrowUpDownLine className="arrowUpDown" />
             <p className="rise">{dataAstronomical.astronomy.astro.moonrise}</p>
             <p className="set">{dataAstronomical.astronomy.astro.moonset}</p>

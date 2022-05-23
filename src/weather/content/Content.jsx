@@ -11,8 +11,6 @@ const Content = () => {
     setIsError,
     setIsWriting,
     responseFromServer,
-    isWriting,
-    isError,
     setDataAstronomical,
   } = useStoreData();
 

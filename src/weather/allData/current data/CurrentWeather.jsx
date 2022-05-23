@@ -3,6 +3,7 @@ import { RiCelsiusFill } from "react-icons/ri";
 import useDate from "../../../hooks/use-date";
 import useStoreData from "../../../hooks/use-store";
 import "./currentweather.css";
+import useImg from "./../../../hooks/use-img";
 
 const CurrentWeather = () => {
   const { allData, darkMode } = useStoreData();
@@ -11,7 +12,7 @@ const CurrentWeather = () => {
     allData.location.localtime
   );
   let conditionLength = allData.current.condition.text.length;
-
+  const response = useImg(allData.current.condition.code);
   return (
     <>
       <section
@@ -32,6 +33,7 @@ const CurrentWeather = () => {
           </div>
         </div>
         <div className="localWeatherData">
+          <img src={response} className="imgCondition" />
           <div className="localTemp">
             {allData.current.temp_c}
             <RiCelsiusFill />
