@@ -12,5 +12,8 @@
   @apply flex justify-center mt-14;
 }
 .boxHourPoint {
-  @apply flex justify-center -mt-7 ml-10 h-3;
+  @apply flex justify-center -mt-7 ml-11 h-3;
+}
+.boxHourIconImg {
+  @apply absolute h-7 ml-4 mt-4;
 }
