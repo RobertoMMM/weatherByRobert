@@ -16,13 +16,13 @@
 .divButtonLigth {
   @apply h-10 min-w-[2.5rem] justify-center 
   text-center flex rounded-xl
-  border-[3px] cursor-pointer border-none relative left-[68%] -translate-x-1/2;
+  border-[3px] cursor-pointer border-none relative left-[68%] -translate-x-1/2 animate-toggleAnimation;
 }
 .divButtonDark {
-  @apply bg-forDark animate-toggleAnimation;
+  @apply bg-forDark;
 }
 .divButtonLigth {
-  @apply bg-forWhite animate-toggleAnimation;
+  @apply bg-forWhite;
 }
 .labelInput {
   @apply w-72 h-10 rounded-xl items-center flex gap-2 absolute left-1/3 -translate-x-1/2;

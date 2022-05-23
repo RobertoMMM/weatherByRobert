@@ -1,0 +1,17 @@
+.hoursDataDark,
+.hoursDataWhite {
+  @apply flex absolute top-[74rem] md:top-[67rem] w-[90%] sm:w-[80%] md:w-[60%] lg:w-1/2 2xl:w-[40%] 
+    overflow-x-scroll select-none p-2 rounded-xl;
+}
+.hoursDataDark {
+  @apply shadow-2xl;
+}
+.hoursDataWhite {
+  @apply shadow-[0px_25px_50px_-12px_rgba(255,255,255,0.25)];
+}
+.hoursData2 {
+  @apply flex gap-4;
+}
+.hourtextmain {
+  @apply absolute top-[69rem] md:top-[62rem] flex justify-center text-2xl;
+}

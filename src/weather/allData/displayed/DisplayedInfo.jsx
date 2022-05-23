@@ -5,7 +5,7 @@ import AllWeather from "./AllWeather";
 import "./displayedinfo.css";
 
 const DisplayedInfo = () => {
-  const { isError, allData, isWriting, darkMode } = useStoreData();
+  const { isError, allData, isWriting } = useStoreData();
   if (isError) {
     return (
       <>

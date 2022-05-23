@@ -1,7 +1,7 @@
 import "./MoonSun.css";
-import imgSun from "../assets/sunny.png";
-import imgMoon from "../assets/cloudy-night.png";
-import useStoreData from "../hooks/use-store";
+import imgSun from "./../../../assets/sunny.png";
+import imgMoon from "./../../../assets/cloudy-night.png";
+import useStoreData from "../../../hooks/use-store";
 import { RiArrowUpDownLine } from "react-icons/ri";
 
 const MoonSun = () => {

@@ -3,7 +3,6 @@ import { BsKeyboard } from "react-icons/bs";
 import "./Content.css";
 import DisplayedInfo from "../allData/displayed/DisplayedInfo";
 import useStoreData from "../../hooks/use-store";
-import MoonSun from "../../setRise/MoonSun";
 const Content = () => {
   const {
     userInput,
@@ -40,7 +39,6 @@ const Content = () => {
         `https://api.weatherapi.com/v1/astronomy.json?key=030082f3dc234b4181f111631221005&q=${userInput}`
       );
       const dataTransformerAstronomical = await dataResponseAstronomical.json();
-      console.log(dataTransformerAstronomical);
       if (dataTransformerWeather.error || dataTransformerAstronomical.error) {
         setIsError(true);
         return;
@@ -72,7 +70,6 @@ const Content = () => {
       <section className={darkMode ? "sectionInfoDark" : "sectionInfoWhite"}>
         {!userInput && <NoUserInput />}
         {userInput && <DisplayedInfo />}
-        {userInput && !isWriting && !isError && <MoonSun />}
       </section>
     </>
   );

@@ -1,0 +1,16 @@
+.boxHourMainDark,
+.boxHourMainWhite {
+  @apply h-32 w-16 border-[3px] border-forWhite rounded-xl text-base;
+}
+.boxHourMainWhite {
+  @apply border-forDark;
+}
+.boxHourTime {
+  @apply flex justify-center pt-2;
+}
+.boxHourTemp {
+  @apply flex justify-center mt-14;
+}
+.boxHourPoint {
+  @apply flex justify-center -mt-7 ml-10 h-3;
+}

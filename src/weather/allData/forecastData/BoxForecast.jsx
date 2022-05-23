@@ -1,6 +1,8 @@
 import useDate from "../../../hooks/use-date";
 import useStoreData from "../../../hooks/use-store";
 import { BsFillCloudPlusFill, BsFillCloudMinusFill } from "react-icons/bs";
+import imgTempDark from "../../../assets/circle-small.png";
+import imgTempWhite from "../../../assets/circle-small-free-icon-font.png";
 import "./BoxForecast.css";
 
 const BoxForecast = ({ description, maxtemp, mintemp, date }) => {
@@ -35,7 +37,15 @@ const BoxForecast = ({ description, maxtemp, mintemp, date }) => {
         </div>
         <div className="maxMinTemp">
           <p>{maxtemp}</p>
+          <img
+            src={darkMode ? imgTempWhite : imgTempDark}
+            className="boxForecastPoint"
+          />
           <p>{mintemp}</p>
+          <img
+            src={darkMode ? imgTempWhite : imgTempDark}
+            className="boxForecastPoint"
+          />
         </div>
       </div>
     </>

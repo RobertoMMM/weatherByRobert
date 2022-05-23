@@ -1,14 +1,14 @@
 .SetRiseMain {
-  @apply absolute top-[50rem] md:top-[30rem] text-lg;
+  @apply absolute top-[48rem] md:top-[28rem] text-lg;
 }
 .antenttext {
   @apply text-2xl;
 }
 .sun {
-  @apply absolute top-20 sm:-left-[7rem] justify-center;
+  @apply absolute top-20 sm:-left-[10rem] justify-center;
 }
 .moon {
-  @apply absolute top-56 md:top-80 sm:-left-[7rem] justify-center;
+  @apply absolute top-52 md:top-72 sm:-left-[10rem] justify-center;
 }
 .imagesSunMoon {
   @apply md:w-32 w-20 sm:left-0;

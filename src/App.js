@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import { ThemeContext } from "./store/context";
 import "./App.css";
 import Navbar from "./navbar/Navbar";

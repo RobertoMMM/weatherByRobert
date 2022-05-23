@@ -22,5 +22,8 @@
   @apply text-xl flex absolute right-20 top-2 flex-col gap-4;
 }
 .maxMinTemp {
-  @apply text-xl flex flex-col gap-4 absolute right-2 top-2;
+  @apply text-xl flex flex-col gap-9 absolute right-2 top-1;
+}
+.boxForecastPoint {
+  @apply ml-10 h-3 -mt-16;
 }
