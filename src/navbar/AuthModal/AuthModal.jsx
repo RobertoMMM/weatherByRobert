@@ -17,7 +17,6 @@ import {
   googleProvider,
   onAuthStateChanged,
 } from "../../firebase/firebaseConfig";
-
 const AuthModal = () => {
   const {
     isOpenModal,
@@ -72,7 +71,6 @@ const AuthModal = () => {
     const getResponse = await getDoc(
       doc(firestore, "users", response.user.uid)
     );
-    console.log(getResponse._document);
     if (!getResponse._document) {
       await setDoc(doc(firestore, "users", response.user.uid), {
         darkMode: darkMode,
