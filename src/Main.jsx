@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { ThemeContext } from "./store/context";
-import "./App.css";
+import "./Main.css";
 import Navbar from "./navbar/Navbar";
 import Content from "./weather/content/Content";
 import AuthModal from "./navbar/AuthModal/AuthModal";

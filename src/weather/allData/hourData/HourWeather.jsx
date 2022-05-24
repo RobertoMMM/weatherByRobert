@@ -20,6 +20,7 @@ const HourWeather = () => {
                 time={convertedTime}
                 temp={temp_c}
                 imgIcon={condition.code}
+                key={convertedTime}
               />
             );
           })}

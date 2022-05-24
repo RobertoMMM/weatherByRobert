@@ -1,6 +1,6 @@
 import "./MoonSun.css";
-import imgSun from "./../../../assets/sunny.png";
-import imgMoon from "./../../../assets/cloudy-night.png";
+import imgSun from "./../../../assets/weather/sunny.png";
+import imgMoon from "./../../../assets/weather/cloudy-night.png";
 import useStoreData from "../../../hooks/use-store";
 import { RiArrowUpDownLine } from "react-icons/ri";
 
@@ -10,7 +10,7 @@ const MoonSun = () => {
     return (
       <>
         <div className="SetRiseMain">
-          <p className="antenttext">Sunrise / moonset today</p>
+          <p className="antenttext">Sunrise / Moonset Today</p>
           <div className="sun">
             <img src={imgSun} className="imagesSunMoon" alt="img" />
             <RiArrowUpDownLine className="arrowUpDown" />

@@ -1,0 +1,40 @@
+.airMain {
+  @apply absolute top-[88rem] md:top-[84rem];
+}
+.textmain {
+  @apply text-2xl flex justify-center items-center;
+}
+.airDegree {
+  @apply flex absolute left-1/2 -translate-x-1/2 items-end text-xl;
+}
+.airDegree > span {
+  @apply w-10 mt-10 ml-4 rounded-xl justify-center items-center flex flex-col 
+  border-2 border-[#A6E7FF];
+}
+.airDegree > span > img {
+  @apply w-7;
+}
+.airDegree span:nth-child(1) {
+  @apply h-16 border-green-300;
+}
+.airDegree span:nth-child(2) {
+  @apply h-20 border-green-300;
+}
+.airDegree span:nth-child(3) {
+  @apply h-24;
+}
+.airDegree span:nth-child(4) {
+  @apply h-28;
+}
+.airDegree span:nth-child(5) {
+  @apply h-32 border-red-300;
+}
+.airDegree span:nth-child(6) {
+  @apply h-36 border-red-300;
+}
+.yourAirCondition {
+  @apply text-xl mx-8 mt-8;
+}
+.aircleanimg {
+  @apply w-32 justify-center left-1/2 relative -translate-x-1/2 mt-2;
+}

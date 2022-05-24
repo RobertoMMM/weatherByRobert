@@ -7,7 +7,7 @@ import imgRainyDay from "../assets/condition/rainy-day.png";
 import imgRainyVeryMuch from "../assets/condition/rainy.png";
 import imgSnowLittle from "../assets/condition/snowy-little.png";
 import imgSnowMuch from "../assets/condition/snowy-much.png";
-import imgSunny from "../assets/condition/sunny.png";
+import imgSunny from "../assets/weather/sunny.png";
 import imgLowTemperature from "../assets/condition/temperature.png";
 import imgThunderStorm from "../assets/condition/thunderstorm.png";
 import imgDrizzle from "../assets/condition/hailstorm.png";

@@ -1,4 +1,4 @@
-import imgSad from "./../../../assets/cloud.png";
+import imgSad from "./../../../assets/weather/cloud.png";
 import useStoreData from "../../../hooks/use-store";
 import Wait from "../waitpage/Wait";
 import AllWeather from "./AllWeather";

@@ -33,7 +33,7 @@ const CurrentWeather = () => {
           </div>
         </div>
         <div className="localWeatherData">
-          <img src={response} className="imgCondition" alt="img"/>
+          <img src={response} className="imgCondition" alt="img" />
           <div className="localTemp">
             {allData.current.temp_c}
             <RiCelsiusFill />

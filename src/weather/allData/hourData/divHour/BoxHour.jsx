@@ -1,6 +1,6 @@
 import "./BoxHour.css";
-import imgTempDark from "../../../../assets/circle-small.png";
-import imgTempWhite from "../../../../assets/circle-small-free-icon-font.png";
+import imgTempDark from "../../../../assets/weather/circle-small.png";
+import imgTempWhite from "../../../../assets/weather/circle-small-free-icon-font.png";
 import useStoreData from "../../../../hooks/use-store";
 import useImg from "./../../../../hooks/use-img";
 const BoxHour = ({ time, temp, imgIcon }) => {

@@ -19,6 +19,7 @@ const ForecastWeather = () => {
           date={date.date}
           maxtemp={date.day.maxtemp_c}
           mintemp={date.day.mintemp_c}
+          key={date.date}
         />
       ))}
     </div>
