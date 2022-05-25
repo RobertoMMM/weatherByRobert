@@ -5,14 +5,7 @@ import "./BoxForecast.css";
 const ForecastWeather = () => {
   const { allData } = useStoreData();
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        height: "20 rem",
-      }}
-    >
+    <div className="mainForecastDiv">
       {allData.forecast.forecastday.map((date) => (
         <BoxForecast
           description={date.day.condition.text}

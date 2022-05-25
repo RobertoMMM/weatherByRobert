@@ -36,6 +36,16 @@ module.exports = {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
         },
+        appear: {
+          "0%": {
+            transform: "translateX(-50px)",
+            opacity: 0,
+          },
+          "100%": {
+            transform: "translateX(0)",
+            opacity: 1,
+          },
+        },
         moonPulse: {
           "0%": {
             transform: "rotate(0deg)",
@@ -50,6 +60,7 @@ module.exports = {
         moonPulse: "moonPulse 500ms ease-in-out",
         toggleAnimation: "toggleAnimation 500ms ease-in-out",
         spinSlow: "spin 3s linear infinite",
+        appear: "appear 500ms",
         formAnimation: "formAnimation 300ms ",
       },
       fontFamily: {

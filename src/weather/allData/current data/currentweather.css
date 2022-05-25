@@ -1,6 +1,6 @@
 .weatherDataSectionDark,
 .weatherDataSectionLight {
-  @apply h-72 w-72 md:h-[21rem] md:w-80 rounded-2xl text-slate-300 absolute md:static;
+  @apply h-72 w-72 md:h-[21rem] md:w-80 rounded-2xl text-slate-300 absolute md:static animate-appear;
 }
 .weatherDataSectionLight {
   @apply bg-forWhite text-slate-700;

@@ -1,5 +1,5 @@
 .airMain {
-  @apply absolute top-[88rem] md:top-[84rem];
+  @apply absolute animate-appear;
 }
 .textmain {
   @apply text-2xl flex justify-center items-center;

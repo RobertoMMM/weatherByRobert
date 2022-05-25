@@ -1,5 +1,5 @@
 .SetRiseMain {
-  @apply absolute top-[48rem] md:top-[28rem] text-lg;
+  @apply absolute text-lg animate-appear;
 }
 .antenttext {
   @apply text-2xl;

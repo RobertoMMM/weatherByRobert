@@ -3,7 +3,7 @@
 }
 .darkSec,
 .lightSec {
-  @apply top-0 left-0 absolute w-[100vw] h-[130rem] md:h-[170rem] duration-300 scroll-smooth pointer-events-auto;
+  @apply top-0 left-0 absolute w-[100vw] h-[150rem] duration-300 scroll-smooth pointer-events-auto;
 }
 .darkSec {
   @apply bg-darkThemeBack text-forDark cursor-[url(./assets/cursor-images/cursor-free-icon-font-forDark.png),_pointer];

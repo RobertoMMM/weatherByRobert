@@ -1,0 +1,3 @@
+.mainForecastDiv {
+  @apply flex justify-between h-80 flex-col;
+}
