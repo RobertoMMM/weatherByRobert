@@ -2,7 +2,7 @@
 .mainDataNavWhite {
   @apply w-80 h-14 fixed lg:left-[88%] xl:left-[80%] 2xl:left-[74%] rounded-xl lg:h-80 lg:w-14
     lg:grid bg-forDark lg:bg-transparent lg:border-4 lg:border-forDark lg:justify-center 
-    items-center select-none z-50 flex justify-evenly lg:bottom-[14rem] xl:bottom-[25rem] translate-y-1/2 bottom-24;
+    items-center select-none z-50 flex justify-evenly lg:bottom-[14rem] 2xl:bottom-[25rem] translate-y-1/2 bottom-24;
 }
 .mainDataNavWhite {
   @apply bg-forWhite lg:border-forWhite lg:bg-transparent;
