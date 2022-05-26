@@ -4,6 +4,7 @@ import "./Main.css";
 import Navbar from "./navbar/Navbar";
 import Content from "./weather/content/Content";
 import AuthModal from "./navbar/AuthModal/AuthModal";
+import { createPortal } from "react-dom";
 
 const App = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -34,7 +35,7 @@ const App = () => {
     <section className={darkMode ? "darkSec" : "lightSec"}>
       {isVisibleNav && <Navbar />}
       <Content />
-      <AuthModal />
+      {createPortal(<AuthModal />, document.getElementById('authmodal'))}
     </section>
   );
 };
