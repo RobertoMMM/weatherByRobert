@@ -18,12 +18,12 @@ import {
 } from "firebase/firestore";
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "...",
-  authDomain: "...",
-  projectId: "...",
-  storageBucket: "...",
-  messagingSenderId: "...",
-  appId: "...",
+  apiKey: "AIzaSyA2h8wSK8o-UbVLH0zNdQOKKh9Y2Nm2nIE",
+  authDomain: "userdataauth.firebaseapp.com",
+  projectId: "userdataauth",
+  storageBucket: "userdataauth.appspot.com",
+  messagingSenderId: "798560404712",
+  appId: "1:798560404712:web:b8625c14174771da83755d"
 };
 
 const googleProvider = new GoogleAuthProvider();
